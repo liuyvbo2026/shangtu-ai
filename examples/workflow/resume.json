@@ -1,0 +1,179 @@
+{
+  "failure": {
+    "imageId": "selling-1",
+    "planDigest": "963859c9b915da69a5d18d08cd84e08881c79befe41c29590c7cf41021fdaf19",
+    "status": "failed",
+    "trace": [
+      {
+        "id": "assemble",
+        "version": "03A.nodes.1",
+        "inputDigest": "e2dddcc4b3da0a884c9cfe12fd0a37434ab92c5c24683928dd351f0813437e97",
+        "outputDigest": "bb4c2f12a63d519ee1202d46f7e4f121c54f8903a876ac1618bb56386862989a",
+        "status": "succeeded",
+        "error": null
+      },
+      {
+        "id": "generate",
+        "version": "03A.nodes.1",
+        "inputDigest": "f90bdd522596dac29779e7f4f18fd0c692a24b27be667403db09e027db8f1b31",
+        "outputDigest": "34d80128550f05772ee2900b333e7e3a021000b8153895b8d2d3809cce1b1475",
+        "status": "succeeded",
+        "error": null
+      },
+      {
+        "id": "compose",
+        "version": "03A.nodes.1",
+        "inputDigest": "795f11709cec715fd73e528f09d5163f1e56f058e1046f160d5f83c22cb1bba8",
+        "outputDigest": null,
+        "status": "failed",
+        "error": {
+          "code": "COMPOSE_FAILED",
+          "retryable": false,
+          "outcomeUnknown": false,
+          "issues": []
+        }
+      }
+    ],
+    "checkpoint": {
+      "stage": "generated",
+      "planDigest": "963859c9b915da69a5d18d08cd84e08881c79befe41c29590c7cf41021fdaf19",
+      "imageId": "selling-1",
+      "pins": [],
+      "generated": {
+        "base64": "iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAAAeUlEQVR4nO3PwQkAIBDAsNvdnyM4rUP4CEKhA6Rz1v664YIGtKABLWhACxrQgga0oAEtaEALGtCCBrSgAS1oQAsa0IIGtKABLWhACxrQgga0oAEtaEALGtCCBrSgAS1oQAsa0IIGtKABLWhACxrQgga0oAEtaEALHruRjHGHMkbZUAAAAABJRU5ErkJggg==",
+        "mediaType": "image/png",
+        "width": 64,
+        "height": 64,
+        "provenance": "test-only",
+        "requestId": "test-selling-1-1"
+      },
+      "composed": null,
+      "digest": "d85fb00a98560fb63bda1a93b4f33db74039cd4ab0e98f3ddda399a1cf1af115"
+    },
+    "error": {
+      "code": "COMPOSE_FAILED",
+      "retryable": false,
+      "outcomeUnknown": false,
+      "issues": []
+    }
+  },
+  "resumed": {
+    "imageId": "selling-1",
+    "planDigest": "963859c9b915da69a5d18d08cd84e08881c79befe41c29590c7cf41021fdaf19",
+    "status": "succeeded",
+    "trace": [
+      {
+        "id": "assemble",
+        "version": "03A.nodes.1",
+        "inputDigest": "e2dddcc4b3da0a884c9cfe12fd0a37434ab92c5c24683928dd351f0813437e97",
+        "outputDigest": "bb4c2f12a63d519ee1202d46f7e4f121c54f8903a876ac1618bb56386862989a",
+        "status": "succeeded",
+        "error": null
+      },
+      {
+        "id": "compose",
+        "version": "03A.nodes.1",
+        "inputDigest": "795f11709cec715fd73e528f09d5163f1e56f058e1046f160d5f83c22cb1bba8",
+        "outputDigest": "869e891bcbf5ddff966feec73d39ae1cab41102cf0d9dfbb24c02c7c2479a1b0",
+        "status": "succeeded",
+        "error": null
+      },
+      {
+        "id": "inspect",
+        "version": "03A.nodes.1",
+        "inputDigest": "f0c007b9bd0d1c02b7c0842eaed753609bc3fd22040798a838e743b215a8d2ad",
+        "outputDigest": "7df12921e66305f855a4f51f69938136989890cae7e95f22a16923037a3a1c62",
+        "status": "succeeded",
+        "error": null
+      }
+    ],
+    "checkpoint": {
+      "stage": "composed",
+      "planDigest": "963859c9b915da69a5d18d08cd84e08881c79befe41c29590c7cf41021fdaf19",
+      "imageId": "selling-1",
+      "pins": [],
+      "generated": {
+        "base64": "iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAAAeUlEQVR4nO3PwQkAIBDAsNvdnyM4rUP4CEKhA6Rz1v664YIGtKABLWhACxrQgga0oAEtaEALGtCCBrSgAS1oQAsa0IIGtKABLWhACxrQgga0oAEtaEALGtCCBrSgAS1oQAsa0IIGtKABLWhACxrQgga0oAEtaEALHruRjHGHMkbZUAAAAABJRU5ErkJggg==",
+        "mediaType": "image/png",
+        "width": 64,
+        "height": 64,
+        "provenance": "test-only",
+        "requestId": "test-selling-1-1"
+      },
+      "composed": {
+        "raster": {
+          "base64": "iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAAAeUlEQVR4nO3PwQkAIBDAsNvdnyM4rUP4CEKhA6Rz1v664YIGtKABLWhACxrQgga0oAEtaEALGtCCBrSgAS1oQAsa0IIGtKABLWhACxrQgga0oAEtaEALGtCCBrSgAS1oQAsa0IIGtKABLWhACxrQgga0oAEtaEALHruRjHGHMkbZUAAAAABJRU5ErkJggg==",
+          "mediaType": "image/png",
+          "width": 64,
+          "height": 64,
+          "provenance": "test-only",
+          "requestId": "test-selling-1-1"
+        },
+        "layers": [
+          {
+            "kind": "text",
+            "text": "蓝色",
+            "factIds": [
+              "f-color"
+            ],
+            "slotId": "headline",
+            "box": [
+              0.1,
+              0.05,
+              0.8,
+              0.2
+            ],
+            "language": "zh"
+          }
+        ]
+      },
+      "digest": "61a8207b16d69791ce13e113a4bbe752369a037585a39056a7c7ef085cd4c6ca"
+    },
+    "quality": {
+      "passed": true,
+      "evidence": "test-only",
+      "issues": []
+    },
+    "value": {
+      "raster": {
+        "base64": "iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAAAeUlEQVR4nO3PwQkAIBDAsNvdnyM4rUP4CEKhA6Rz1v664YIGtKABLWhACxrQgga0oAEtaEALGtCCBrSgAS1oQAsa0IIGtKABLWhACxrQgga0oAEtaEALGtCCBrSgAS1oQAsa0IIGtKABLWhACxrQgga0oAEtaEALHruRjHGHMkbZUAAAAABJRU5ErkJggg==",
+        "mediaType": "image/png",
+        "width": 64,
+        "height": 64,
+        "provenance": "test-only",
+        "requestId": "test-selling-1-1"
+      },
+      "layers": [
+        {
+          "kind": "text",
+          "text": "蓝色",
+          "factIds": [
+            "f-color"
+          ],
+          "slotId": "headline",
+          "box": [
+            0.1,
+            0.05,
+            0.8,
+            0.2
+          ],
+          "language": "zh"
+        }
+      ],
+      "quality": {
+        "passed": true,
+        "evidence": "test-only",
+        "issues": []
+      },
+      "dependencyPins": [],
+      "artifact": {
+        "id": "artifact-4def53f550c9dcfdeae0c605c2fcf17743102f32cb61384e86b6d91922ba991b",
+        "sha256": "4def53f550c9dcfdeae0c605c2fcf17743102f32cb61384e86b6d91922ba991b",
+        "mediaType": "image/png",
+        "width": 64,
+        "height": 64,
+        "provenance": "test-only"
+      }
+    }
+  }
+}

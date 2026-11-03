@@ -1,0 +1,15 @@
+{
+  "maxReferences": 32,
+  "maxSlots": 100,
+  "maxAssetBytes": 20971520,
+  "maxPixels": 40000000,
+  "allowedMediaTypes": ["image/png", "image/jpeg", "image/webp"],
+  "allowedSizes": null,
+  "platformRules": {},
+  "maxAttempts": 3,
+  "timeoutMs": 30000,
+  "retryBaseMs": 100,
+  "concurrency": 2,
+  "leaseMs": 60000,
+  "pollMs": 50
+}

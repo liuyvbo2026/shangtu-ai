@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "03A quality",
+  "type": "object",
+  "properties": {
+    "passed": {
+      "type": "boolean"
+    },
+    "evidence": {
+      "type": "string",
+      "enum": [
+        "test-only",
+        "model-review",
+        "human-review"
+      ]
+    },
+    "issues": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100,
+            "pattern": "^[a-zA-Z0-9_.:-]+$"
+          },
+          "severity": {
+            "type": "string",
+            "enum": [
+              "warning",
+              "error"
+            ]
+          },
+          "message": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 12000
+          }
+        },
+        "required": [
+          "code",
+          "severity",
+          "message"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0
+    }
+  },
+  "required": [
+    "passed",
+    "evidence",
+    "issues"
+  ],
+  "additionalProperties": false
+}

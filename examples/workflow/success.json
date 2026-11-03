@@ -1,0 +1,919 @@
+{
+  "status": "succeeded",
+  "progress": {
+    "total": 7,
+    "succeeded": 7,
+    "failed": 0,
+    "blocked": 0,
+    "canceled": 0,
+    "pending": 0
+  },
+  "results": {
+    "white-1": {
+      "imageId": "white-1",
+      "planDigest": "963859c9b915da69a5d18d08cd84e08881c79befe41c29590c7cf41021fdaf19",
+      "status": "succeeded",
+      "lastAttemptStatus": "succeeded",
+      "attempts": [
+        {
+          "status": "succeeded",
+          "trace": [
+            {
+              "id": "assemble",
+              "version": "03A.nodes.1",
+              "inputDigest": "48d5eaac8f9ae7eef6b85d6c85cf47ecd701f61b556d767c079259d8efbfbc7f",
+              "outputDigest": "5d1b973592b4dce656cf071887ae70da63c282fed12c489734ebe5bf459c06cb",
+              "status": "succeeded",
+              "error": null
+            },
+            {
+              "id": "generate",
+              "version": "03A.nodes.1",
+              "inputDigest": "51348c0dc23107815737e871ecaa08ed70d5a37d61f0481edf5a59ed0397fe3f",
+              "outputDigest": "abcb6f11d5bf759ecc65d598e03c8acf7fa2817b745edb3e880b6a6dd7ba6f85",
+              "status": "succeeded",
+              "error": null
+            },
+            {
+              "id": "compose",
+              "version": "03A.nodes.1",
+              "inputDigest": "ca867595d84f2ba76cf8512fe6c156cc798a246ae3e169f3a860afa1ea17fb81",
+              "outputDigest": "3385c4dad51abf0248fb13b665cc46e5869ad73d69ff4b8961a35cb82240c7d6",
+              "status": "succeeded",
+              "error": null
+            },
+            {
+              "id": "inspect",
+              "version": "03A.nodes.1",
+              "inputDigest": "bd1b12b167504eadd9cddeb566ee31f65f9938e7800729a19aa97d93bb54ca90",
+              "outputDigest": "7df12921e66305f855a4f51f69938136989890cae7e95f22a16923037a3a1c62",
+              "status": "succeeded",
+              "error": null
+            }
+          ],
+          "error": null
+        }
+      ],
+      "versions": [
+        {
+          "raster": {
+            "base64": "iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAAAeUlEQVR4nO3PwQkAIBDAsFvTedzZt0P4CEKhA6Rz9vq64YIGtKABLWhACxrQgga0oAEtaEALGtCCBrSgAS1oQAsa0IIGtKABLWhACxrQgga0oAEtaEALGtCCBrSgAS1oQAsa0IIGtKABLWhACxrQgga0oAEtaEALHrsu2SG0IP2G4AAAAABJRU5ErkJggg==",
+            "mediaType": "image/png",
+            "width": 64,
+            "height": 64,
+            "provenance": "test-only",
+            "requestId": "test-white-1-1"
+          },
+          "layers": [],
+          "quality": {
+            "passed": true,
+            "evidence": "test-only",
+            "issues": []
+          },
+          "dependencyPins": [],
+          "artifact": {
+            "id": "artifact-779e8b5d990d2b699147d842aaeb5e38eaaefbcc044c62dd68d9f3f2bdeef4e8",
+            "sha256": "779e8b5d990d2b699147d842aaeb5e38eaaefbcc044c62dd68d9f3f2bdeef4e8",
+            "mediaType": "image/png",
+            "width": 64,
+            "height": 64,
+            "provenance": "test-only"
+          },
+          "version": 1
+        }
+      ],
+      "currentVersion": 1,
+      "checkpoint": {
+        "stage": "composed",
+        "planDigest": "963859c9b915da69a5d18d08cd84e08881c79befe41c29590c7cf41021fdaf19",
+        "imageId": "white-1",
+        "pins": [],
+        "generated": {
+          "base64": "iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAAAeUlEQVR4nO3PwQkAIBDAsFvTedzZt0P4CEKhA6Rz9vq64YIGtKABLWhACxrQgga0oAEtaEALGtCCBrSgAS1oQAsa0IIGtKABLWhACxrQgga0oAEtaEALGtCCBrSgAS1oQAsa0IIGtKABLWhACxrQgga0oAEtaEALHrsu2SG0IP2G4AAAAABJRU5ErkJggg==",
+          "mediaType": "image/png",
+          "width": 64,
+          "height": 64,
+          "provenance": "test-only",
+          "requestId": "test-white-1-1"
+        },
+        "composed": {
+          "raster": {
+            "base64": "iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAAAeUlEQVR4nO3PwQkAIBDAsFvTedzZt0P4CEKhA6Rz9vq64YIGtKABLWhACxrQgga0oAEtaEALGtCCBrSgAS1oQAsa0IIGtKABLWhACxrQgga0oAEtaEALGtCCBrSgAS1oQAsa0IIGtKABLWhACxrQgga0oAEtaEALHrsu2SG0IP2G4AAAAABJRU5ErkJggg==",
+            "mediaType": "image/png",
+            "width": 64,
+            "height": 64,
+            "provenance": "test-only",
+            "requestId": "test-white-1-1"
+          },
+          "layers": []
+        },
+        "digest": "d931984fcae46bd19c67b4e1efcc4527d8c0a30529cf936c8bedd7422a329c09"
+      },
+      "error": null
+    },
+    "selling-1": {
+      "imageId": "selling-1",
+      "planDigest": "963859c9b915da69a5d18d08cd84e08881c79befe41c29590c7cf41021fdaf19",
+      "status": "succeeded",
+      "lastAttemptStatus": "succeeded",
+      "attempts": [
+        {
+          "status": "succeeded",
+          "trace": [
+            {
+              "id": "assemble",
+              "version": "03A.nodes.1",
+              "inputDigest": "e2dddcc4b3da0a884c9cfe12fd0a37434ab92c5c24683928dd351f0813437e97",
+              "outputDigest": "bb4c2f12a63d519ee1202d46f7e4f121c54f8903a876ac1618bb56386862989a",
+              "status": "succeeded",
+              "error": null
+            },
+            {
+              "id": "generate",
+              "version": "03A.nodes.1",
+              "inputDigest": "f90bdd522596dac29779e7f4f18fd0c692a24b27be667403db09e027db8f1b31",
+              "outputDigest": "34d80128550f05772ee2900b333e7e3a021000b8153895b8d2d3809cce1b1475",
+              "status": "succeeded",
+              "error": null
+            },
+            {
+              "id": "compose",
+              "version": "03A.nodes.1",
+              "inputDigest": "795f11709cec715fd73e528f09d5163f1e56f058e1046f160d5f83c22cb1bba8",
+              "outputDigest": "869e891bcbf5ddff966feec73d39ae1cab41102cf0d9dfbb24c02c7c2479a1b0",
+              "status": "succeeded",
+              "error": null
+            },
+            {
+              "id": "inspect",
+              "version": "03A.nodes.1",
+              "inputDigest": "f0c007b9bd0d1c02b7c0842eaed753609bc3fd22040798a838e743b215a8d2ad",
+              "outputDigest": "7df12921e66305f855a4f51f69938136989890cae7e95f22a16923037a3a1c62",
+              "status": "succeeded",
+              "error": null
+            }
+          ],
+          "error": null
+        }
+      ],
+      "versions": [
+        {
+          "raster": {
+            "base64": "iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAAAeUlEQVR4nO3PwQkAIBDAsNvdnyM4rUP4CEKhA6Rz1v664YIGtKABLWhACxrQgga0oAEtaEALGtCCBrSgAS1oQAsa0IIGtKABLWhACxrQgga0oAEtaEALGtCCBrSgAS1oQAsa0IIGtKABLWhACxrQgga0oAEtaEALHruRjHGHMkbZUAAAAABJRU5ErkJggg==",
+            "mediaType": "image/png",
+            "width": 64,
+            "height": 64,
+            "provenance": "test-only",
+            "requestId": "test-selling-1-1"
+          },
+          "layers": [
+            {
+              "kind": "text",
+              "text": "蓝色",
+              "factIds": [
+                "f-color"
+              ],
+              "slotId": "headline",
+              "box": [
+                0.1,
+                0.05,
+                0.8,
+                0.2
+              ],
+              "language": "zh"
+            }
+          ],
+          "quality": {
+            "passed": true,
+            "evidence": "test-only",
+            "issues": []
+          },
+          "dependencyPins": [],
+          "artifact": {
+            "id": "artifact-4def53f550c9dcfdeae0c605c2fcf17743102f32cb61384e86b6d91922ba991b",
+            "sha256": "4def53f550c9dcfdeae0c605c2fcf17743102f32cb61384e86b6d91922ba991b",
+            "mediaType": "image/png",
+            "width": 64,
+            "height": 64,
+            "provenance": "test-only"
+          },
+          "version": 1
+        }
+      ],
+      "currentVersion": 1,
+      "checkpoint": {
+        "stage": "composed",
+        "planDigest": "963859c9b915da69a5d18d08cd84e08881c79befe41c29590c7cf41021fdaf19",
+        "imageId": "selling-1",
+        "pins": [],
+        "generated": {
+          "base64": "iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAAAeUlEQVR4nO3PwQkAIBDAsNvdnyM4rUP4CEKhA6Rz1v664YIGtKABLWhACxrQgga0oAEtaEALGtCCBrSgAS1oQAsa0IIGtKABLWhACxrQgga0oAEtaEALGtCCBrSgAS1oQAsa0IIGtKABLWhACxrQgga0oAEtaEALHruRjHGHMkbZUAAAAABJRU5ErkJggg==",
+          "mediaType": "image/png",
+          "width": 64,
+          "height": 64,
+          "provenance": "test-only",
+          "requestId": "test-selling-1-1"
+        },
+        "composed": {
+          "raster": {
+            "base64": "iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAAAeUlEQVR4nO3PwQkAIBDAsNvdnyM4rUP4CEKhA6Rz1v664YIGtKABLWhACxrQgga0oAEtaEALGtCCBrSgAS1oQAsa0IIGtKABLWhACxrQgga0oAEtaEALGtCCBrSgAS1oQAsa0IIGtKABLWhACxrQgga0oAEtaEALHruRjHGHMkbZUAAAAABJRU5ErkJggg==",
+            "mediaType": "image/png",
+            "width": 64,
+            "height": 64,
+            "provenance": "test-only",
+            "requestId": "test-selling-1-1"
+          },
+          "layers": [
+            {
+              "kind": "text",
+              "text": "蓝色",
+              "factIds": [
+                "f-color"
+              ],
+              "slotId": "headline",
+              "box": [
+                0.1,
+                0.05,
+                0.8,
+                0.2
+              ],
+              "language": "zh"
+            }
+          ]
+        },
+        "digest": "61a8207b16d69791ce13e113a4bbe752369a037585a39056a7c7ef085cd4c6ca"
+      },
+      "error": null
+    },
+    "selling-2": {
+      "imageId": "selling-2",
+      "planDigest": "963859c9b915da69a5d18d08cd84e08881c79befe41c29590c7cf41021fdaf19",
+      "status": "succeeded",
+      "lastAttemptStatus": "succeeded",
+      "attempts": [
+        {
+          "status": "succeeded",
+          "trace": [
+            {
+              "id": "assemble",
+              "version": "03A.nodes.1",
+              "inputDigest": "99df1bd0a01c59c8f3c500dd6cf8e181849c163854e5e2da3a6c6c7b7338527e",
+              "outputDigest": "c4181a6aa587b51a581297d196ffd9990100feafb69a33795e467b5f73470a69",
+              "status": "succeeded",
+              "error": null
+            },
+            {
+              "id": "generate",
+              "version": "03A.nodes.1",
+              "inputDigest": "0d48307e7fbd7cc5f17e068b571931b87a12028cf6ff60e274cbca4b98dbd0ed",
+              "outputDigest": "7b1a408e108274092ff400d36e4d77a8a5cbc52800de00eb8c2fbb254a921a29",
+              "status": "succeeded",
+              "error": null
+            },
+            {
+              "id": "compose",
+              "version": "03A.nodes.1",
+              "inputDigest": "772d0bff09de35b1caaba19e71a03a4c3efb6219de68b2021def8039db8e92b6",
+              "outputDigest": "7d3bcbfc8b23ad3422e30b35a8d1d8df73e266b7f4571012c34629c2e70bff4e",
+              "status": "succeeded",
+              "error": null
+            },
+            {
+              "id": "inspect",
+              "version": "03A.nodes.1",
+              "inputDigest": "2a478a9241fd99aeb79d26e71381337d7bd2df2c9d3bc0d3cbbc82517e958cb8",
+              "outputDigest": "7df12921e66305f855a4f51f69938136989890cae7e95f22a16923037a3a1c62",
+              "status": "succeeded",
+              "error": null
+            }
+          ],
+          "error": null
+        }
+      ],
+      "versions": [
+        {
+          "raster": {
+            "base64": "iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAAAe0lEQVR4nO3PQQ0AIBDAsPPvhB/K0IAIHg3JkgnoZp/1dcMFDWhBA1rQgBY0oAUNaEEDWtCAFjSgBQ1oQQNa0IAWNKAFDWhBA1rQgBY0oAUNaEEDWtCAFjSgBQ1oQQNa0IAWNKAFDWhBA1rQgBY0oAUNaEEDWtCAFjx2ASUech2zHlLjAAAAAElFTkSuQmCC",
+            "mediaType": "image/png",
+            "width": 64,
+            "height": 64,
+            "provenance": "test-only",
+            "requestId": "test-selling-2-1"
+          },
+          "layers": [
+            {
+              "kind": "text",
+              "text": "350 mL",
+              "factIds": [
+                "f-volume"
+              ],
+              "slotId": "headline",
+              "box": [
+                0.1,
+                0.05,
+                0.8,
+                0.2
+              ],
+              "language": "zh"
+            }
+          ],
+          "quality": {
+            "passed": true,
+            "evidence": "test-only",
+            "issues": []
+          },
+          "dependencyPins": [],
+          "artifact": {
+            "id": "artifact-0ef8293d97b1997d61c87b1764ddfd9ce1380f77c0befcfaf2c164744c9b9b09",
+            "sha256": "0ef8293d97b1997d61c87b1764ddfd9ce1380f77c0befcfaf2c164744c9b9b09",
+            "mediaType": "image/png",
+            "width": 64,
+            "height": 64,
+            "provenance": "test-only"
+          },
+          "version": 1
+        }
+      ],
+      "currentVersion": 1,
+      "checkpoint": {
+        "stage": "composed",
+        "planDigest": "963859c9b915da69a5d18d08cd84e08881c79befe41c29590c7cf41021fdaf19",
+        "imageId": "selling-2",
+        "pins": [],
+        "generated": {
+          "base64": "iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAAAe0lEQVR4nO3PQQ0AIBDAsPPvhB/K0IAIHg3JkgnoZp/1dcMFDWhBA1rQgBY0oAUNaEEDWtCAFjSgBQ1oQQNa0IAWNKAFDWhBA1rQgBY0oAUNaEEDWtCAFjSgBQ1oQQNa0IAWNKAFDWhBA1rQgBY0oAUNaEEDWtCAFjx2ASUech2zHlLjAAAAAElFTkSuQmCC",
+          "mediaType": "image/png",
+          "width": 64,
+          "height": 64,
+          "provenance": "test-only",
+          "requestId": "test-selling-2-1"
+        },
+        "composed": {
+          "raster": {
+            "base64": "iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAAAe0lEQVR4nO3PQQ0AIBDAsPPvhB/K0IAIHg3JkgnoZp/1dcMFDWhBA1rQgBY0oAUNaEEDWtCAFjSgBQ1oQQNa0IAWNKAFDWhBA1rQgBY0oAUNaEEDWtCAFjSgBQ1oQQNa0IAWNKAFDWhBA1rQgBY0oAUNaEEDWtCAFjx2ASUech2zHlLjAAAAAElFTkSuQmCC",
+            "mediaType": "image/png",
+            "width": 64,
+            "height": 64,
+            "provenance": "test-only",
+            "requestId": "test-selling-2-1"
+          },
+          "layers": [
+            {
+              "kind": "text",
+              "text": "350 mL",
+              "factIds": [
+                "f-volume"
+              ],
+              "slotId": "headline",
+              "box": [
+                0.1,
+                0.05,
+                0.8,
+                0.2
+              ],
+              "language": "zh"
+            }
+          ]
+        },
+        "digest": "d9b8a517ae54acd9543464fc7919451fd553411849037ffcef814d951d07c7a8"
+      },
+      "error": null
+    },
+    "selling-3": {
+      "imageId": "selling-3",
+      "planDigest": "963859c9b915da69a5d18d08cd84e08881c79befe41c29590c7cf41021fdaf19",
+      "status": "succeeded",
+      "lastAttemptStatus": "succeeded",
+      "attempts": [
+        {
+          "status": "succeeded",
+          "trace": [
+            {
+              "id": "assemble",
+              "version": "03A.nodes.1",
+              "inputDigest": "584e03b95c5b18837d8a69c1ee057299d134e18cfdff11037bfde3151f8bd0ed",
+              "outputDigest": "d802cf5646165fb641285cdc887e230436b4e831525dc1508fda3dbe95926236",
+              "status": "succeeded",
+              "error": null
+            },
+            {
+              "id": "generate",
+              "version": "03A.nodes.1",
+              "inputDigest": "9087f4244838b72407fa5f6b9d943fa7f1baedc17b88c29669a090e67caa10dd",
+              "outputDigest": "5f8e4821f3cdfea65784ce3dc27c2aa97af42e85dcde3ad7381ac976d5819809",
+              "status": "succeeded",
+              "error": null
+            },
+            {
+              "id": "compose",
+              "version": "03A.nodes.1",
+              "inputDigest": "8ec7246d8a507df3d5f8e833c9a1aa96ad0cc2ce459566d298092553bcaa2ab2",
+              "outputDigest": "25623943bdaaa1688679d58e8bd0e2f49b94fd719bf731972688dcabccd650e6",
+              "status": "succeeded",
+              "error": null
+            },
+            {
+              "id": "inspect",
+              "version": "03A.nodes.1",
+              "inputDigest": "3e9e58ec1a221bd0b2a37dcca93a6807a8553c3bc3199ea27043b5da65d4c156",
+              "outputDigest": "7df12921e66305f855a4f51f69938136989890cae7e95f22a16923037a3a1c62",
+              "status": "succeeded",
+              "error": null
+            }
+          ],
+          "error": null
+        }
+      ],
+      "versions": [
+        {
+          "raster": {
+            "base64": "iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAAAeUlEQVR4nO3PwQkAIBDAsNvJld3Sj0P4CEKhA6Szzv664YIGtKABLWhACxrQgga0oAEtaEALGtCCBrSgAS1oQAsa0IIGtKABLWhACxrQgga0oAEtaEALGtCCBrSgAS1oQAsa0IIGtKABLWhACxrQgga0oAEtaEALHrtN2iG0/baEkgAAAABJRU5ErkJggg==",
+            "mediaType": "image/png",
+            "width": 64,
+            "height": 64,
+            "provenance": "test-only",
+            "requestId": "test-selling-3-1"
+          },
+          "layers": [
+            {
+              "kind": "text",
+              "text": "蓝色",
+              "factIds": [
+                "f-color"
+              ],
+              "slotId": "headline",
+              "box": [
+                0.1,
+                0.05,
+                0.8,
+                0.2
+              ],
+              "language": "zh"
+            }
+          ],
+          "quality": {
+            "passed": true,
+            "evidence": "test-only",
+            "issues": []
+          },
+          "dependencyPins": [],
+          "artifact": {
+            "id": "artifact-61b62f704073498ec9584ee7dbc559ee2e8319cdaeaa141aebc31867c41aa8b6",
+            "sha256": "61b62f704073498ec9584ee7dbc559ee2e8319cdaeaa141aebc31867c41aa8b6",
+            "mediaType": "image/png",
+            "width": 64,
+            "height": 64,
+            "provenance": "test-only"
+          },
+          "version": 1
+        }
+      ],
+      "currentVersion": 1,
+      "checkpoint": {
+        "stage": "composed",
+        "planDigest": "963859c9b915da69a5d18d08cd84e08881c79befe41c29590c7cf41021fdaf19",
+        "imageId": "selling-3",
+        "pins": [],
+        "generated": {
+          "base64": "iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAAAeUlEQVR4nO3PwQkAIBDAsNvJld3Sj0P4CEKhA6Szzv664YIGtKABLWhACxrQgga0oAEtaEALGtCCBrSgAS1oQAsa0IIGtKABLWhACxrQgga0oAEtaEALGtCCBrSgAS1oQAsa0IIGtKABLWhACxrQgga0oAEtaEALHrtN2iG0/baEkgAAAABJRU5ErkJggg==",
+          "mediaType": "image/png",
+          "width": 64,
+          "height": 64,
+          "provenance": "test-only",
+          "requestId": "test-selling-3-1"
+        },
+        "composed": {
+          "raster": {
+            "base64": "iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAAAeUlEQVR4nO3PwQkAIBDAsNvJld3Sj0P4CEKhA6Szzv664YIGtKABLWhACxrQgga0oAEtaEALGtCCBrSgAS1oQAsa0IIGtKABLWhACxrQgga0oAEtaEALGtCCBrSgAS1oQAsa0IIGtKABLWhACxrQgga0oAEtaEALHrtN2iG0/baEkgAAAABJRU5ErkJggg==",
+            "mediaType": "image/png",
+            "width": 64,
+            "height": 64,
+            "provenance": "test-only",
+            "requestId": "test-selling-3-1"
+          },
+          "layers": [
+            {
+              "kind": "text",
+              "text": "蓝色",
+              "factIds": [
+                "f-color"
+              ],
+              "slotId": "headline",
+              "box": [
+                0.1,
+                0.05,
+                0.8,
+                0.2
+              ],
+              "language": "zh"
+            }
+          ]
+        },
+        "digest": "f107deebf39d6d457666f09f109a9f17deed8792e5cb23345a1fb601f7669f77"
+      },
+      "error": null
+    },
+    "scene-1": {
+      "imageId": "scene-1",
+      "planDigest": "963859c9b915da69a5d18d08cd84e08881c79befe41c29590c7cf41021fdaf19",
+      "status": "succeeded",
+      "lastAttemptStatus": "succeeded",
+      "attempts": [
+        {
+          "status": "succeeded",
+          "trace": [
+            {
+              "id": "assemble",
+              "version": "03A.nodes.1",
+              "inputDigest": "a3a4a9c23e09aa6930cda53ed0578f17f30988479cb76a18c338d64775deac21",
+              "outputDigest": "ed7a68a35a71b9126136ecc0fb6acf7b3b2e2043e6914d8313ca6e97c994f700",
+              "status": "succeeded",
+              "error": null
+            },
+            {
+              "id": "generate",
+              "version": "03A.nodes.1",
+              "inputDigest": "3f04edb06a46bab4b84d19959ef0664443ac953411f6ae544979c1e81d534f7d",
+              "outputDigest": "878670f7bfcb0dfc4b76af273d786427c5a1c973e4241e75e1ab711284cc61fa",
+              "status": "succeeded",
+              "error": null
+            },
+            {
+              "id": "compose",
+              "version": "03A.nodes.1",
+              "inputDigest": "b5be95a89434d98518b8a9ed13aec1138a0df9e3521ce07a83894e635f14b6a7",
+              "outputDigest": "f8a369471849830bc8cba6027ac7f18cc9984d170aa6766e50b7d454814d46d6",
+              "status": "succeeded",
+              "error": null
+            },
+            {
+              "id": "inspect",
+              "version": "03A.nodes.1",
+              "inputDigest": "39f6426374034c4748ea521201256bbd7181f3ad040cf6c287cabf2c134eb115",
+              "outputDigest": "7df12921e66305f855a4f51f69938136989890cae7e95f22a16923037a3a1c62",
+              "status": "succeeded",
+              "error": null
+            }
+          ],
+          "error": null
+        }
+      ],
+      "versions": [
+        {
+          "raster": {
+            "base64": "iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAAAeklEQVR4nO3PUQkAIBTAwBfCWIY1oiH8OITBAtxmr/N1wwUNaEEDWtCAFjSgBQ1oQQNa0IAWNKAFDWhBA1rQgBY0oAUNaEEDWtCAFjSgBQ1oQQNa0IAWNKAFDWhBA1rQgBY0oAUNaEEDWtCAFjSgBQ1oQQNa0IAWPHYB+R8BAMjClywAAAAASUVORK5CYII=",
+            "mediaType": "image/png",
+            "width": 64,
+            "height": 64,
+            "provenance": "test-only",
+            "requestId": "test-scene-1-1"
+          },
+          "layers": [
+            {
+              "kind": "text",
+              "text": "蓝色",
+              "factIds": [
+                "f-color"
+              ],
+              "slotId": "headline",
+              "box": [
+                0.1,
+                0.05,
+                0.8,
+                0.2
+              ],
+              "language": "zh"
+            }
+          ],
+          "quality": {
+            "passed": true,
+            "evidence": "test-only",
+            "issues": []
+          },
+          "dependencyPins": [],
+          "artifact": {
+            "id": "artifact-b545916ddd6dea342315295c3e934f9bcedb3debba5f774ece04ff73147601af",
+            "sha256": "b545916ddd6dea342315295c3e934f9bcedb3debba5f774ece04ff73147601af",
+            "mediaType": "image/png",
+            "width": 64,
+            "height": 64,
+            "provenance": "test-only"
+          },
+          "version": 1
+        }
+      ],
+      "currentVersion": 1,
+      "checkpoint": {
+        "stage": "composed",
+        "planDigest": "963859c9b915da69a5d18d08cd84e08881c79befe41c29590c7cf41021fdaf19",
+        "imageId": "scene-1",
+        "pins": [],
+        "generated": {
+          "base64": "iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAAAeklEQVR4nO3PUQkAIBTAwBfCWIY1oiH8OITBAtxmr/N1wwUNaEEDWtCAFjSgBQ1oQQNa0IAWNKAFDWhBA1rQgBY0oAUNaEEDWtCAFjSgBQ1oQQNa0IAWNKAFDWhBA1rQgBY0oAUNaEEDWtCAFjSgBQ1oQQNa0IAWPHYB+R8BAMjClywAAAAASUVORK5CYII=",
+          "mediaType": "image/png",
+          "width": 64,
+          "height": 64,
+          "provenance": "test-only",
+          "requestId": "test-scene-1-1"
+        },
+        "composed": {
+          "raster": {
+            "base64": "iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAAAeklEQVR4nO3PUQkAIBTAwBfCWIY1oiH8OITBAtxmr/N1wwUNaEEDWtCAFjSgBQ1oQQNa0IAWNKAFDWhBA1rQgBY0oAUNaEEDWtCAFjSgBQ1oQQNa0IAWNKAFDWhBA1rQgBY0oAUNaEEDWtCAFjSgBQ1oQQNa0IAWPHYB+R8BAMjClywAAAAASUVORK5CYII=",
+            "mediaType": "image/png",
+            "width": 64,
+            "height": 64,
+            "provenance": "test-only",
+            "requestId": "test-scene-1-1"
+          },
+          "layers": [
+            {
+              "kind": "text",
+              "text": "蓝色",
+              "factIds": [
+                "f-color"
+              ],
+              "slotId": "headline",
+              "box": [
+                0.1,
+                0.05,
+                0.8,
+                0.2
+              ],
+              "language": "zh"
+            }
+          ]
+        },
+        "digest": "e9d6ac5bee6a79fca9629aae604cb0425dea8307ca6e0a5acf033dc559583493"
+      },
+      "error": null
+    },
+    "scene-2": {
+      "imageId": "scene-2",
+      "planDigest": "963859c9b915da69a5d18d08cd84e08881c79befe41c29590c7cf41021fdaf19",
+      "status": "succeeded",
+      "lastAttemptStatus": "succeeded",
+      "attempts": [
+        {
+          "status": "succeeded",
+          "trace": [
+            {
+              "id": "assemble",
+              "version": "03A.nodes.1",
+              "inputDigest": "54c4de7abf118a7c46b9158a7fa5208166ef132e32c2045523e04ce0ca2c5875",
+              "outputDigest": "37183c42920f15e3d294568110036f46e9f6fe3783628c8ddbaff6d0b47e82cd",
+              "status": "succeeded",
+              "error": null
+            },
+            {
+              "id": "generate",
+              "version": "03A.nodes.1",
+              "inputDigest": "1c3c9fd1a97adf06bb62e5a8766cbac72b30f6c26f2d13b2abdf96acf0aba0b9",
+              "outputDigest": "f84c036554c007f7a5548f19089b114f544d73a976393de14c8a164187ecff46",
+              "status": "succeeded",
+              "error": null
+            },
+            {
+              "id": "compose",
+              "version": "03A.nodes.1",
+              "inputDigest": "9f0559386a1330e181ff2bb8149a54f23e3c0620fe8926a9fb1f1fe1bf0d46df",
+              "outputDigest": "ad823f272bf5e5bb0e776ccd71c0bae6b72fb75da3739c00f5c0dedc249c930c",
+              "status": "succeeded",
+              "error": null
+            },
+            {
+              "id": "inspect",
+              "version": "03A.nodes.1",
+              "inputDigest": "df422321431f4f469f9bc4454a6e33f80beaf36e48604f6793015e63e3add153",
+              "outputDigest": "7df12921e66305f855a4f51f69938136989890cae7e95f22a16923037a3a1c62",
+              "status": "succeeded",
+              "error": null
+            }
+          ],
+          "error": null
+        }
+      ],
+      "versions": [
+        {
+          "raster": {
+            "base64": "iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAAAeklEQVR4nO3PUQkAIBTAwBfLAEY1qCH8OITBAtxmr/N1wwUNaEEDWtCAFjSgBQ1oQQNa0IAWNKAFDWhBA1rQgBY0oAUNaEEDWtCAFjSgBQ1oQQNa0IAWNKAFDWhBA1rQgBY0oAUNaEEDWtCAFjSgBQ1oQQNa0IAWPHYBox0BD7OlWW8AAAAASUVORK5CYII=",
+            "mediaType": "image/png",
+            "width": 64,
+            "height": 64,
+            "provenance": "test-only",
+            "requestId": "test-scene-2-1"
+          },
+          "layers": [
+            {
+              "kind": "text",
+              "text": "350 mL",
+              "factIds": [
+                "f-volume"
+              ],
+              "slotId": "headline",
+              "box": [
+                0.1,
+                0.05,
+                0.8,
+                0.2
+              ],
+              "language": "zh"
+            }
+          ],
+          "quality": {
+            "passed": true,
+            "evidence": "test-only",
+            "issues": []
+          },
+          "dependencyPins": [],
+          "artifact": {
+            "id": "artifact-e228cc54bf3da79119ee799ebffb371c17f44c2a79337520d656e74acb5a428b",
+            "sha256": "e228cc54bf3da79119ee799ebffb371c17f44c2a79337520d656e74acb5a428b",
+            "mediaType": "image/png",
+            "width": 64,
+            "height": 64,
+            "provenance": "test-only"
+          },
+          "version": 1
+        }
+      ],
+      "currentVersion": 1,
+      "checkpoint": {
+        "stage": "composed",
+        "planDigest": "963859c9b915da69a5d18d08cd84e08881c79befe41c29590c7cf41021fdaf19",
+        "imageId": "scene-2",
+        "pins": [],
+        "generated": {
+          "base64": "iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAAAeklEQVR4nO3PUQkAIBTAwBfLAEY1qCH8OITBAtxmr/N1wwUNaEEDWtCAFjSgBQ1oQQNa0IAWNKAFDWhBA1rQgBY0oAUNaEEDWtCAFjSgBQ1oQQNa0IAWNKAFDWhBA1rQgBY0oAUNaEEDWtCAFjSgBQ1oQQNa0IAWPHYBox0BD7OlWW8AAAAASUVORK5CYII=",
+          "mediaType": "image/png",
+          "width": 64,
+          "height": 64,
+          "provenance": "test-only",
+          "requestId": "test-scene-2-1"
+        },
+        "composed": {
+          "raster": {
+            "base64": "iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAAAeklEQVR4nO3PUQkAIBTAwBfLAEY1qCH8OITBAtxmr/N1wwUNaEEDWtCAFjSgBQ1oQQNa0IAWNKAFDWhBA1rQgBY0oAUNaEEDWtCAFjSgBQ1oQQNa0IAWNKAFDWhBA1rQgBY0oAUNaEEDWtCAFjSgBQ1oQQNa0IAWPHYBox0BD7OlWW8AAAAASUVORK5CYII=",
+            "mediaType": "image/png",
+            "width": 64,
+            "height": 64,
+            "provenance": "test-only",
+            "requestId": "test-scene-2-1"
+          },
+          "layers": [
+            {
+              "kind": "text",
+              "text": "350 mL",
+              "factIds": [
+                "f-volume"
+              ],
+              "slotId": "headline",
+              "box": [
+                0.1,
+                0.05,
+                0.8,
+                0.2
+              ],
+              "language": "zh"
+            }
+          ]
+        },
+        "digest": "aa79bc717ff3e9001710df2ee64640c82f92486666af64c81f9cb6eb46aca3c9"
+      },
+      "error": null
+    },
+    "other-1": {
+      "imageId": "other-1",
+      "planDigest": "963859c9b915da69a5d18d08cd84e08881c79befe41c29590c7cf41021fdaf19",
+      "status": "succeeded",
+      "lastAttemptStatus": "succeeded",
+      "attempts": [
+        {
+          "status": "succeeded",
+          "trace": [
+            {
+              "id": "assemble",
+              "version": "03A.nodes.1",
+              "inputDigest": "4079ffdcc705dae4665de835f4a8b76489246ebf4aa14cc042a6fe33f951cf1f",
+              "outputDigest": "5c4c2a9860e6113bebd452e101813e179ac800eba6c4b610cc5efb04608561ff",
+              "status": "succeeded",
+              "error": null
+            },
+            {
+              "id": "generate",
+              "version": "03A.nodes.1",
+              "inputDigest": "5d5488ba98efd84bba8b155fdd37d87b396217c17f8add79f2678a719763f82e",
+              "outputDigest": "8e7eef7c2878093bc258fdb31da07f6dbdc090d14540b0ea545e3ee48ea65ebe",
+              "status": "succeeded",
+              "error": null
+            },
+            {
+              "id": "compose",
+              "version": "03A.nodes.1",
+              "inputDigest": "2388da6917a8e8437737ae102c49e5f01c8874b55420c8567cd2b383ae927132",
+              "outputDigest": "ae871f49af958432c70f2590415b2824adb23ebb24fa9ce1ecb69bcc357a52b8",
+              "status": "succeeded",
+              "error": null
+            },
+            {
+              "id": "inspect",
+              "version": "03A.nodes.1",
+              "inputDigest": "8c67a0667a4a12b43fd63195f847427de06b126e5892f68b318dd26579ccc8bc",
+              "outputDigest": "7df12921e66305f855a4f51f69938136989890cae7e95f22a16923037a3a1c62",
+              "status": "succeeded",
+              "error": null
+            }
+          ],
+          "error": null
+        }
+      ],
+      "versions": [
+        {
+          "raster": {
+            "base64": "iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAAAeklEQVR4nO3PUQkAIBTAwFfSEAayryH8OITBAtxm7fN1wwUNaEEDWtCAFjSgBQ1oQQNa0IAWNKAFDWhBA1rQgBY0oAUNaEEDWtCAFjSgBQ1oQQNa0IAWNKAFDWhBA1rQgBY0oAUNaEEDWtCAFjSgBQ1oQQNa0IAWPHYBJQAxPBd6kiUAAAAASUVORK5CYII=",
+            "mediaType": "image/png",
+            "width": 64,
+            "height": 64,
+            "provenance": "test-only",
+            "requestId": "test-other-1-1"
+          },
+          "layers": [
+            {
+              "kind": "text",
+              "text": "蓝色",
+              "factIds": [
+                "f-color"
+              ],
+              "slotId": "headline",
+              "box": [
+                0.1,
+                0.05,
+                0.8,
+                0.2
+              ],
+              "language": "zh"
+            }
+          ],
+          "quality": {
+            "passed": true,
+            "evidence": "test-only",
+            "issues": []
+          },
+          "dependencyPins": [],
+          "artifact": {
+            "id": "artifact-c1687a503abfc6e1380421bbfef42db93770432a9f3ab941028950aab0fa18fa",
+            "sha256": "c1687a503abfc6e1380421bbfef42db93770432a9f3ab941028950aab0fa18fa",
+            "mediaType": "image/png",
+            "width": 64,
+            "height": 64,
+            "provenance": "test-only"
+          },
+          "version": 1
+        }
+      ],
+      "currentVersion": 1,
+      "checkpoint": {
+        "stage": "composed",
+        "planDigest": "963859c9b915da69a5d18d08cd84e08881c79befe41c29590c7cf41021fdaf19",
+        "imageId": "other-1",
+        "pins": [],
+        "generated": {
+          "base64": "iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAAAeklEQVR4nO3PUQkAIBTAwFfSEAayryH8OITBAtxm7fN1wwUNaEEDWtCAFjSgBQ1oQQNa0IAWNKAFDWhBA1rQgBY0oAUNaEEDWtCAFjSgBQ1oQQNa0IAWNKAFDWhBA1rQgBY0oAUNaEEDWtCAFjSgBQ1oQQNa0IAWPHYBJQAxPBd6kiUAAAAASUVORK5CYII=",
+          "mediaType": "image/png",
+          "width": 64,
+          "height": 64,
+          "provenance": "test-only",
+          "requestId": "test-other-1-1"
+        },
+        "composed": {
+          "raster": {
+            "base64": "iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAAAeklEQVR4nO3PUQkAIBTAwFfSEAayryH8OITBAtxm7fN1wwUNaEEDWtCAFjSgBQ1oQQNa0IAWNKAFDWhBA1rQgBY0oAUNaEEDWtCAFjSgBQ1oQQNa0IAWNKAFDWhBA1rQgBY0oAUNaEEDWtCAFjSgBQ1oQQNa0IAWPHYBJQAxPBd6kiUAAAAASUVORK5CYII=",
+            "mediaType": "image/png",
+            "width": 64,
+            "height": 64,
+            "provenance": "test-only",
+            "requestId": "test-other-1-1"
+          },
+          "layers": [
+            {
+              "kind": "text",
+              "text": "蓝色",
+              "factIds": [
+                "f-color"
+              ],
+              "slotId": "headline",
+              "box": [
+                0.1,
+                0.05,
+                0.8,
+                0.2
+              ],
+              "language": "zh"
+            }
+          ]
+        },
+        "digest": "1d2ab030bb87670288fa18630791f6ffe3c9188aa7361235e7099b8da1122897"
+      },
+      "error": null
+    }
+  }
+}

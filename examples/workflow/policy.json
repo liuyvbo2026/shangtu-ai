@@ -1,0 +1,65 @@
+{
+  "version": "03A.policy.1-provisional",
+  "totalMin": {
+    "value": 7,
+    "basis": "src/model.js validateKit; docs/MVP-TASKS.md A04 explicitly requires submission verification",
+    "status": "provisional"
+  },
+  "totalMax": {
+    "value": 20,
+    "basis": "src/model.js validateKit; original-site submission boundary not verified",
+    "status": "provisional"
+  },
+  "perTypeMax": {
+    "value": 20,
+    "basis": "src/model.js setCount; local provisional cap",
+    "status": "provisional"
+  },
+  "productReferencesMin": {
+    "value": 1,
+    "basis": "Current product input requirement",
+    "status": "provisional"
+  },
+  "productReferencesMax": {
+    "value": 6,
+    "basis": "src/model.js validateKit; original-site boundary still pending",
+    "status": "provisional"
+  },
+  "combinedReferencesMax": {
+    "value": 10,
+    "basis": "docs/MVP-TASKS.md recorded official API reading 2026-10-28; account/provider not reverified here",
+    "status": "recorded-not-reverified"
+  },
+  "ratios": {
+    "value": [
+      "1:1",
+      "3:4",
+      "9:16",
+      "16:9"
+    ],
+    "basis": "src/views.js current UI options; full eight-ratio contract not frozen",
+    "status": "provisional"
+  },
+  "maxPixels": {
+    "value": 40000000,
+    "basis": "02A backend/core.mjs local safeguard; NOT provider pixel limit",
+    "status": "local-safeguard"
+  },
+  "allowedSizes": {
+    "value": null,
+    "basis": "Provider request-size mapping remains B03 work; null means unknown, NOT unrestricted support",
+    "status": "provisional"
+  },
+  "outputsPerCall": {
+    "value": 1,
+    "basis": "docs/MVP-TASKS.md recorded Flash single-image API; not tested here",
+    "status": "recorded-not-reverified"
+  },
+  "imageModel": "Seedream 5.0 Flash",
+  "modelId": null,
+  "layoutOnce": {
+    "value": true,
+    "basis": "docs/MVP-TASKS.md E06 one selected layout per selling image; provisional business rule",
+    "status": "provisional"
+  }
+}

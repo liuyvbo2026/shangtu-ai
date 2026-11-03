@@ -1,0 +1,371 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "03A input",
+  "type": "object",
+  "properties": {
+    "schemaVersion": {
+      "const": "03A.1"
+    },
+    "product": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "pattern": "^[a-zA-Z0-9_.:-]+$"
+        },
+        "revision": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 12000
+        },
+        "facts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 100,
+                "pattern": "^[a-zA-Z0-9_.:-]+$"
+              },
+              "key": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 12000
+              },
+              "value": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 12000
+              },
+              "source": {
+                "type": "object",
+                "properties": {
+                  "kind": {
+                    "const": "user-confirmed"
+                  },
+                  "locator": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 12000
+                  }
+                },
+                "required": [
+                  "kind",
+                  "locator"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "id",
+              "key",
+              "value",
+              "source"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0
+        },
+        "unknowns": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "key": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 12000
+              },
+              "reason": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 12000
+              }
+            },
+            "required": [
+              "key",
+              "reason"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0
+        },
+        "references": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 100,
+                "pattern": "^[a-zA-Z0-9_.:-]+$"
+              },
+              "assetId": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 100,
+                "pattern": "^[a-zA-Z0-9_.:-]+$"
+              },
+              "role": {
+                "type": "string",
+                "enum": [
+                  "product",
+                  "detail",
+                  "packaging",
+                  "style",
+                  "layout",
+                  "current",
+                  "baseline"
+                ]
+              },
+              "purpose": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 12000
+              }
+            },
+            "required": [
+              "id",
+              "assetId",
+              "role",
+              "purpose"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1
+        }
+      },
+      "required": [
+        "id",
+        "revision",
+        "name",
+        "facts",
+        "unknowns",
+        "references"
+      ],
+      "additionalProperties": false
+    },
+    "requirements": {
+      "type": "object",
+      "properties": {
+        "description": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 12000
+        },
+        "platform": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 12000
+        },
+        "language": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 12000
+        },
+        "counts": {
+          "type": "object",
+          "properties": {
+            "white": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "selling": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "scene": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "other": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "required": [
+            "white",
+            "selling",
+            "scene",
+            "other"
+          ],
+          "additionalProperties": false
+        },
+        "ratio": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 12000
+        },
+        "size": {
+          "type": "object",
+          "properties": {
+            "width": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "height": {
+              "type": "integer",
+              "minimum": 1
+            }
+          },
+          "required": [
+            "width",
+            "height"
+          ],
+          "additionalProperties": false
+        },
+        "layoutIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100,
+            "pattern": "^[a-zA-Z0-9_.:-]+$"
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "description",
+        "platform",
+        "language",
+        "counts",
+        "ratio",
+        "size",
+        "layoutIds"
+      ],
+      "additionalProperties": false
+    },
+    "layouts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100,
+            "pattern": "^[a-zA-Z0-9_.:-]+$"
+          },
+          "version": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 12000
+          },
+          "allowedTypes": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "white",
+                "selling",
+                "scene",
+                "other"
+              ]
+            },
+            "minItems": 1
+          },
+          "ratios": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 12000
+            },
+            "minItems": 1
+          },
+          "referenceId": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 100,
+                "pattern": "^[a-zA-Z0-9_.:-]+$"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "subjectBox": {
+            "type": "array",
+            "items": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "minItems": 4,
+            "maxItems": 4
+          },
+          "textSlots": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 100,
+                  "pattern": "^[a-zA-Z0-9_.:-]+$"
+                },
+                "box": {
+                  "type": "array",
+                  "items": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1
+                  },
+                  "minItems": 4,
+                  "maxItems": 4
+                },
+                "maxChars": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "maxLines": {
+                  "type": "integer",
+                  "minimum": 1
+                }
+              },
+              "required": [
+                "id",
+                "box",
+                "maxChars",
+                "maxLines"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 0
+          }
+        },
+        "required": [
+          "id",
+          "version",
+          "allowedTypes",
+          "ratios",
+          "referenceId",
+          "subjectBox",
+          "textSlots"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "product",
+    "requirements",
+    "layouts"
+  ],
+  "additionalProperties": false
+}

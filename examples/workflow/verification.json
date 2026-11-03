@@ -1,0 +1,65 @@
+{
+  "scope": "03A deterministic structure/flow verification only",
+  "testOnly": true,
+  "qualityClaim": false,
+  "scenarios": {
+    "success": {
+      "status": "succeeded",
+      "progress": {
+        "total": 7,
+        "succeeded": 7,
+        "failed": 0,
+        "blocked": 0,
+        "canceled": 0,
+        "pending": 0
+      }
+    },
+    "partial": {
+      "status": "partial",
+      "progress": {
+        "total": 7,
+        "succeeded": 6,
+        "failed": 1,
+        "blocked": 0,
+        "canceled": 0,
+        "pending": 0
+      }
+    },
+    "illegalPlan": {
+      "status": "failed",
+      "error": {
+        "code": "INVALID_PLAN",
+        "retryable": false,
+        "outcomeUnknown": false,
+        "issues": [
+          {
+            "code": "TYPE_COUNT",
+            "path": "plan.images.other",
+            "message": "Plan must exactly meet requested counts"
+          }
+        ]
+      }
+    },
+    "singleImageRerun": {
+      "status": "succeeded",
+      "progress": {
+        "total": 7,
+        "succeeded": 7,
+        "failed": 0,
+        "blocked": 0,
+        "canceled": 0,
+        "pending": 0
+      },
+      "unchangedSiblingRecords": true
+    },
+    "resume": {
+      "failedNode": "compose",
+      "resumedNodes": [
+        "assemble",
+        "compose",
+        "inspect"
+      ],
+      "status": "succeeded"
+    }
+  }
+}

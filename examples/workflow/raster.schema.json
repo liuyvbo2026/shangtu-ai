@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "03A raster",
+  "type": "object",
+  "properties": {
+    "base64": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 60000000
+    },
+    "mediaType": {
+      "const": "image/png"
+    },
+    "width": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "height": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "provenance": {
+      "type": "string",
+      "enum": [
+        "test-only",
+        "provider",
+        "compositor"
+      ]
+    },
+    "requestId": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "pattern": "^[a-zA-Z0-9_.:-]+$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  },
+  "required": [
+    "base64",
+    "mediaType",
+    "width",
+    "height",
+    "provenance",
+    "requestId"
+  ],
+  "additionalProperties": false
+}

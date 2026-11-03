@@ -1,0 +1,755 @@
+{
+  "contract": "backend-v1-provisional",
+  "method": "POST",
+  "path": "/api/backend-v1/tasks",
+  "headers": {
+    "Content-Type": "application/json",
+    "X-Backend-Client": "local-development",
+    "Idempotency-Key": "example-only-do-not-submit"
+  },
+  "body": {
+    "productId": "test-cup",
+    "productRevision": 1,
+    "description": "独立测试套图，未知材质不得写入文案",
+    "settings": {
+      "platform": "test",
+      "language": "zh",
+      "ratio": "1:1",
+      "counts": {
+        "white": 1,
+        "selling": 3,
+        "scene": 2,
+        "other": 1
+      },
+      "workflow03A": {
+        "status": "ready",
+        "versions": {
+          "schema": "03A.1",
+          "workflow": "03A.1.0",
+          "prompt": "03A.prompt.1-draft",
+          "nodes": "03A.nodes.1"
+        },
+        "trace": [
+          {
+            "id": "understand",
+            "version": "03A.nodes.1",
+            "inputDigest": "73b052afc3312de1f63e08b53df84388ec35ff0d89fad4fa777a965c329df79c",
+            "outputDigest": "0f033c929c27f8261e406a1edb802d2bdee375be6f31d0228d814277b7e3f356",
+            "status": "succeeded",
+            "error": null
+          },
+          {
+            "id": "plan",
+            "version": "03A.nodes.1",
+            "inputDigest": "dd62838a59a28a44e412530b6f6b11b5cbccf236f8522149190d58ac870d308d",
+            "outputDigest": "494813fac0356cff9a5866294d049378645d05f63423ea546fddf9262be29c8b",
+            "status": "succeeded",
+            "error": null
+          },
+          {
+            "id": "validate",
+            "version": "03A.nodes.1",
+            "inputDigest": "848bc6daff9ac84c0e5af0f1936df4f92b64ed08765cf97697ad08dbef6a5a8e",
+            "outputDigest": "bc1c5c0aef822c5960427a254053af8a0c271b8f22eba044d604600d61025285",
+            "status": "succeeded",
+            "error": null
+          }
+        ],
+        "policy": {
+          "version": "03A.policy.1-provisional",
+          "totalMin": {
+            "value": 7,
+            "basis": "src/model.js validateKit; docs/MVP-TASKS.md A04 explicitly requires submission verification",
+            "status": "provisional"
+          },
+          "totalMax": {
+            "value": 20,
+            "basis": "src/model.js validateKit; original-site submission boundary not verified",
+            "status": "provisional"
+          },
+          "perTypeMax": {
+            "value": 20,
+            "basis": "src/model.js setCount; local provisional cap",
+            "status": "provisional"
+          },
+          "productReferencesMin": {
+            "value": 1,
+            "basis": "Current product input requirement",
+            "status": "provisional"
+          },
+          "productReferencesMax": {
+            "value": 6,
+            "basis": "src/model.js validateKit; original-site boundary still pending",
+            "status": "provisional"
+          },
+          "combinedReferencesMax": {
+            "value": 10,
+            "basis": "docs/MVP-TASKS.md recorded official API reading 2026-10-28; account/provider not reverified here",
+            "status": "recorded-not-reverified"
+          },
+          "ratios": {
+            "value": [
+              "1:1",
+              "3:4",
+              "9:16",
+              "16:9"
+            ],
+            "basis": "src/views.js current UI options; full eight-ratio contract not frozen",
+            "status": "provisional"
+          },
+          "maxPixels": {
+            "value": 40000000,
+            "basis": "02A backend/core.mjs local safeguard; NOT provider pixel limit",
+            "status": "local-safeguard"
+          },
+          "allowedSizes": {
+            "value": null,
+            "basis": "Provider request-size mapping remains B03 work; null means unknown, NOT unrestricted support",
+            "status": "provisional"
+          },
+          "outputsPerCall": {
+            "value": 1,
+            "basis": "docs/MVP-TASKS.md recorded Flash single-image API; not tested here",
+            "status": "recorded-not-reverified"
+          },
+          "imageModel": "Seedream 5.0 Flash",
+          "modelId": null,
+          "layoutOnce": {
+            "value": true,
+            "basis": "docs/MVP-TASKS.md E06 one selected layout per selling image; provisional business rule",
+            "status": "provisional"
+          }
+        },
+        "input": {
+          "schemaVersion": "03A.1",
+          "product": {
+            "id": "test-cup",
+            "revision": 1,
+            "name": "测试杯（合成资料）",
+            "facts": [
+              {
+                "id": "f-color",
+                "key": "color",
+                "value": "蓝色",
+                "source": {
+                  "kind": "user-confirmed",
+                  "locator": "test-fixture:color"
+                }
+              },
+              {
+                "id": "f-volume",
+                "key": "volume",
+                "value": "350 mL",
+                "source": {
+                  "kind": "user-confirmed",
+                  "locator": "test-fixture:volume"
+                }
+              }
+            ],
+            "unknowns": [
+              {
+                "key": "material",
+                "reason": "未提供材质证明"
+              }
+            ],
+            "references": [
+              {
+                "id": "ref-front",
+                "assetId": "asset-front",
+                "role": "product",
+                "purpose": "确认商品正面外观"
+              },
+              {
+                "id": "ref-detail",
+                "assetId": "asset-detail",
+                "role": "detail",
+                "purpose": "杯口细节"
+              },
+              {
+                "id": "ref-style",
+                "assetId": "asset-style",
+                "role": "style",
+                "purpose": "仅参考光线和背景"
+              },
+              {
+                "id": "ref-layout",
+                "assetId": "asset-layout",
+                "role": "layout",
+                "purpose": "仅参考文字与主体位置"
+              }
+            ]
+          },
+          "requirements": {
+            "description": "独立测试套图，未知材质不得写入文案",
+            "platform": "test",
+            "language": "zh",
+            "counts": {
+              "white": 1,
+              "selling": 3,
+              "scene": 2,
+              "other": 1
+            },
+            "ratio": "1:1",
+            "size": {
+              "width": 64,
+              "height": 64
+            },
+            "layoutIds": [
+              "layout-one"
+            ]
+          },
+          "layouts": [
+            {
+              "id": "layout-one",
+              "version": "test.1",
+              "allowedTypes": [
+                "selling"
+              ],
+              "ratios": [
+                "1:1",
+                "3:4",
+                "9:16",
+                "16:9"
+              ],
+              "referenceId": "ref-layout",
+              "subjectBox": [
+                0.1,
+                0.3,
+                0.8,
+                0.6
+              ],
+              "textSlots": [
+                {
+                  "id": "headline",
+                  "box": [
+                    0.1,
+                    0.05,
+                    0.8,
+                    0.2
+                  ],
+                  "maxChars": 32,
+                  "maxLines": 2
+                }
+              ]
+            }
+          ]
+        },
+        "handlers": {
+          "id": "deterministic-03a-test-only",
+          "version": "test.1",
+          "replaySafe": true
+        },
+        "understanding": {
+          "schemaVersion": "03A.1",
+          "productId": "test-cup",
+          "productRevision": 1,
+          "facts": [
+            {
+              "id": "f-color",
+              "key": "color",
+              "value": "蓝色",
+              "source": {
+                "kind": "user-confirmed",
+                "locator": "test-fixture:color"
+              }
+            },
+            {
+              "id": "f-volume",
+              "key": "volume",
+              "value": "350 mL",
+              "source": {
+                "kind": "user-confirmed",
+                "locator": "test-fixture:volume"
+              }
+            }
+          ],
+          "unknowns": [
+            {
+              "key": "material",
+              "reason": "未提供材质证明"
+            }
+          ],
+          "references": [
+            {
+              "id": "ref-front",
+              "assetId": "asset-front",
+              "role": "product",
+              "purpose": "确认商品正面外观"
+            },
+            {
+              "id": "ref-detail",
+              "assetId": "asset-detail",
+              "role": "detail",
+              "purpose": "杯口细节"
+            },
+            {
+              "id": "ref-style",
+              "assetId": "asset-style",
+              "role": "style",
+              "purpose": "仅参考光线和背景"
+            },
+            {
+              "id": "ref-layout",
+              "assetId": "asset-layout",
+              "role": "layout",
+              "purpose": "仅参考文字与主体位置"
+            }
+          ],
+          "inferred": [
+            {
+              "id": "inferred-shape",
+              "key": "shape",
+              "value": "杯状轮廓（测试推断）",
+              "confidence": 0.75,
+              "evidenceReferenceIds": [
+                "ref-front"
+              ]
+            }
+          ],
+          "conflicts": []
+        },
+        "plan": {
+          "schemaVersion": "03A.1",
+          "productId": "test-cup",
+          "productRevision": 1,
+          "understandingDigest": "0f033c929c27f8261e406a1edb802d2bdee375be6f31d0228d814277b7e3f356",
+          "visual": {
+            "palette": [
+              "白色",
+              "浅灰"
+            ],
+            "font": "test-font",
+            "lighting": "柔和侧光",
+            "background": "简洁背景"
+          },
+          "images": [
+            {
+              "id": "white-1",
+              "type": "white",
+              "purpose": "正面整体",
+              "content": "white 测试内容 1；仅验证流程结构，不代表可用商品图",
+              "factIds": [],
+              "copy": [],
+              "layoutId": null,
+              "composition": {
+                "subjectBox": [
+                  0.1,
+                  0.1,
+                  0.8,
+                  0.8
+                ]
+              },
+              "references": [
+                {
+                  "referenceId": "ref-front",
+                  "role": "product"
+                },
+                {
+                  "referenceId": "ref-detail",
+                  "role": "detail"
+                },
+                {
+                  "referenceId": "ref-style",
+                  "role": "style"
+                }
+              ],
+              "dependencies": [],
+              "ratio": "1:1",
+              "size": {
+                "width": 64,
+                "height": 64
+              },
+              "method": "generate",
+              "textMode": "editable-overlay"
+            },
+            {
+              "id": "selling-1",
+              "type": "selling",
+              "purpose": "颜色信息",
+              "content": "selling 测试内容 1；仅验证流程结构，不代表可用商品图",
+              "factIds": [
+                "f-color"
+              ],
+              "copy": [
+                {
+                  "slotId": "headline",
+                  "text": "蓝色",
+                  "factIds": [
+                    "f-color"
+                  ]
+                }
+              ],
+              "layoutId": "layout-one",
+              "composition": {
+                "subjectBox": [
+                  0.1,
+                  0.3,
+                  0.8,
+                  0.6
+                ]
+              },
+              "references": [
+                {
+                  "referenceId": "ref-front",
+                  "role": "product"
+                },
+                {
+                  "referenceId": "ref-detail",
+                  "role": "detail"
+                },
+                {
+                  "referenceId": "ref-style",
+                  "role": "style"
+                },
+                {
+                  "referenceId": "ref-layout",
+                  "role": "layout"
+                }
+              ],
+              "dependencies": [],
+              "ratio": "1:1",
+              "size": {
+                "width": 64,
+                "height": 64
+              },
+              "method": "generate",
+              "textMode": "editable-overlay"
+            },
+            {
+              "id": "selling-2",
+              "type": "selling",
+              "purpose": "容量信息",
+              "content": "selling 测试内容 2；仅验证流程结构，不代表可用商品图",
+              "factIds": [
+                "f-volume"
+              ],
+              "copy": [
+                {
+                  "slotId": "headline",
+                  "text": "350 mL",
+                  "factIds": [
+                    "f-volume"
+                  ]
+                }
+              ],
+              "layoutId": null,
+              "composition": {
+                "subjectBox": [
+                  0.1,
+                  0.3,
+                  0.8,
+                  0.6
+                ]
+              },
+              "references": [
+                {
+                  "referenceId": "ref-front",
+                  "role": "product"
+                },
+                {
+                  "referenceId": "ref-detail",
+                  "role": "detail"
+                },
+                {
+                  "referenceId": "ref-style",
+                  "role": "style"
+                }
+              ],
+              "dependencies": [],
+              "ratio": "1:1",
+              "size": {
+                "width": 64,
+                "height": 64
+              },
+              "method": "generate",
+              "textMode": "editable-overlay"
+            },
+            {
+              "id": "selling-3",
+              "type": "selling",
+              "purpose": "外观细节",
+              "content": "selling 测试内容 3；仅验证流程结构，不代表可用商品图",
+              "factIds": [
+                "f-color"
+              ],
+              "copy": [
+                {
+                  "slotId": "headline",
+                  "text": "蓝色",
+                  "factIds": [
+                    "f-color"
+                  ]
+                }
+              ],
+              "layoutId": null,
+              "composition": {
+                "subjectBox": [
+                  0.1,
+                  0.3,
+                  0.8,
+                  0.6
+                ]
+              },
+              "references": [
+                {
+                  "referenceId": "ref-front",
+                  "role": "product"
+                },
+                {
+                  "referenceId": "ref-detail",
+                  "role": "detail"
+                },
+                {
+                  "referenceId": "ref-style",
+                  "role": "style"
+                }
+              ],
+              "dependencies": [],
+              "ratio": "1:1",
+              "size": {
+                "width": 64,
+                "height": 64
+              },
+              "method": "generate",
+              "textMode": "editable-overlay"
+            },
+            {
+              "id": "scene-1",
+              "type": "scene",
+              "purpose": "桌面展示",
+              "content": "scene 测试内容 1；仅验证流程结构，不代表可用商品图",
+              "factIds": [
+                "f-color"
+              ],
+              "copy": [
+                {
+                  "slotId": "headline",
+                  "text": "蓝色",
+                  "factIds": [
+                    "f-color"
+                  ]
+                }
+              ],
+              "layoutId": null,
+              "composition": {
+                "subjectBox": [
+                  0.1,
+                  0.3,
+                  0.8,
+                  0.6
+                ]
+              },
+              "references": [
+                {
+                  "referenceId": "ref-front",
+                  "role": "product"
+                },
+                {
+                  "referenceId": "ref-detail",
+                  "role": "detail"
+                },
+                {
+                  "referenceId": "ref-style",
+                  "role": "style"
+                }
+              ],
+              "dependencies": [],
+              "ratio": "1:1",
+              "size": {
+                "width": 64,
+                "height": 64
+              },
+              "method": "generate",
+              "textMode": "editable-overlay"
+            },
+            {
+              "id": "scene-2",
+              "type": "scene",
+              "purpose": "窗边展示",
+              "content": "scene 测试内容 2；仅验证流程结构，不代表可用商品图",
+              "factIds": [
+                "f-volume"
+              ],
+              "copy": [
+                {
+                  "slotId": "headline",
+                  "text": "350 mL",
+                  "factIds": [
+                    "f-volume"
+                  ]
+                }
+              ],
+              "layoutId": null,
+              "composition": {
+                "subjectBox": [
+                  0.1,
+                  0.3,
+                  0.8,
+                  0.6
+                ]
+              },
+              "references": [
+                {
+                  "referenceId": "ref-front",
+                  "role": "product"
+                },
+                {
+                  "referenceId": "ref-detail",
+                  "role": "detail"
+                },
+                {
+                  "referenceId": "ref-style",
+                  "role": "style"
+                }
+              ],
+              "dependencies": [],
+              "ratio": "1:1",
+              "size": {
+                "width": 64,
+                "height": 64
+              },
+              "method": "generate",
+              "textMode": "editable-overlay"
+            },
+            {
+              "id": "other-1",
+              "type": "other",
+              "purpose": "杯口特写",
+              "content": "other 测试内容 1；仅验证流程结构，不代表可用商品图",
+              "factIds": [
+                "f-color"
+              ],
+              "copy": [
+                {
+                  "slotId": "headline",
+                  "text": "蓝色",
+                  "factIds": [
+                    "f-color"
+                  ]
+                }
+              ],
+              "layoutId": null,
+              "composition": {
+                "subjectBox": [
+                  0.1,
+                  0.3,
+                  0.8,
+                  0.6
+                ]
+              },
+              "references": [
+                {
+                  "referenceId": "ref-front",
+                  "role": "product"
+                },
+                {
+                  "referenceId": "ref-detail",
+                  "role": "detail"
+                },
+                {
+                  "referenceId": "ref-style",
+                  "role": "style"
+                }
+              ],
+              "dependencies": [],
+              "ratio": "1:1",
+              "size": {
+                "width": 64,
+                "height": 64
+              },
+              "method": "generate",
+              "textMode": "editable-overlay"
+            }
+          ]
+        },
+        "digest": "963859c9b915da69a5d18d08cd84e08881c79befe41c29590c7cf41021fdaf19"
+      }
+    },
+    "slots": [
+      {
+        "key": "white-1",
+        "type": "white",
+        "index": 1,
+        "layoutId": null,
+        "size": {
+          "width": 64,
+          "height": 64
+        }
+      },
+      {
+        "key": "selling-1",
+        "type": "selling",
+        "index": 2,
+        "layoutId": "layout-one",
+        "size": {
+          "width": 64,
+          "height": 64
+        }
+      },
+      {
+        "key": "selling-2",
+        "type": "selling",
+        "index": 3,
+        "layoutId": null,
+        "size": {
+          "width": 64,
+          "height": 64
+        }
+      },
+      {
+        "key": "selling-3",
+        "type": "selling",
+        "index": 4,
+        "layoutId": null,
+        "size": {
+          "width": 64,
+          "height": 64
+        }
+      },
+      {
+        "key": "scene-1",
+        "type": "scene",
+        "index": 5,
+        "layoutId": null,
+        "size": {
+          "width": 64,
+          "height": 64
+        }
+      },
+      {
+        "key": "scene-2",
+        "type": "scene",
+        "index": 6,
+        "layoutId": null,
+        "size": {
+          "width": 64,
+          "height": 64
+        }
+      },
+      {
+        "key": "other-1",
+        "type": "other",
+        "index": 7,
+        "layoutId": null,
+        "size": {
+          "width": 64,
+          "height": 64
+        }
+      }
+    ],
+    "versions": {
+      "schema": "03A.1",
+      "workflow": "03A.1.0",
+      "prompt": "03A.prompt.1-draft",
+      "nodes": "03A.nodes.1",
+      "handlers": {
+        "id": "deterministic-03a-test-only",
+        "version": "test.1",
+        "replaySafe": true
+      },
+      "policy": "03A.policy.1-provisional",
+      "model": "Seedream 5.0 Flash",
+      "modelId": null
+    }
+  }
+}

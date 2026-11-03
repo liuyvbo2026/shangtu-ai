@@ -1,0 +1,11 @@
+{
+  "modelCallsPaused": true,
+  "planningMode": "mimo",
+  "accountConfirmed": false,
+  "budgetId": "round1-replace-after-approval",
+  "budgetCny": 0,
+  "reservePerImageCny": 0,
+  "priceEvidence": "",
+  "authorizedReferenceHashes": [],
+  "authorizationEvidence": ""
+}

@@ -1,0 +1,244 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "03A understanding",
+  "type": "object",
+  "properties": {
+    "schemaVersion": {
+      "const": "03A.1"
+    },
+    "productId": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100,
+      "pattern": "^[a-zA-Z0-9_.:-]+$"
+    },
+    "productRevision": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "facts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100,
+            "pattern": "^[a-zA-Z0-9_.:-]+$"
+          },
+          "key": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 12000
+          },
+          "value": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 12000
+          },
+          "source": {
+            "type": "object",
+            "properties": {
+              "kind": {
+                "const": "user-confirmed"
+              },
+              "locator": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 12000
+              }
+            },
+            "required": [
+              "kind",
+              "locator"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "id",
+          "key",
+          "value",
+          "source"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0
+    },
+    "inferred": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100,
+            "pattern": "^[a-zA-Z0-9_.:-]+$"
+          },
+          "key": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 12000
+          },
+          "value": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 12000
+          },
+          "confidence": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "evidenceReferenceIds": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100,
+              "pattern": "^[a-zA-Z0-9_.:-]+$"
+            },
+            "minItems": 1
+          }
+        },
+        "required": [
+          "id",
+          "key",
+          "value",
+          "confidence",
+          "evidenceReferenceIds"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0
+    },
+    "unknowns": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 12000
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 12000
+          }
+        },
+        "required": [
+          "key",
+          "reason"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0
+    },
+    "conflicts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 12000
+          },
+          "factIds": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100,
+              "pattern": "^[a-zA-Z0-9_.:-]+$"
+            },
+            "minItems": 0
+          },
+          "referenceIds": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100,
+              "pattern": "^[a-zA-Z0-9_.:-]+$"
+            },
+            "minItems": 0
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 12000
+          }
+        },
+        "required": [
+          "key",
+          "factIds",
+          "referenceIds",
+          "reason"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0
+    },
+    "references": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100,
+            "pattern": "^[a-zA-Z0-9_.:-]+$"
+          },
+          "assetId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100,
+            "pattern": "^[a-zA-Z0-9_.:-]+$"
+          },
+          "role": {
+            "type": "string",
+            "enum": [
+              "product",
+              "detail",
+              "packaging",
+              "style",
+              "layout",
+              "current",
+              "baseline"
+            ]
+          },
+          "purpose": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 12000
+          }
+        },
+        "required": [
+          "id",
+          "assetId",
+          "role",
+          "purpose"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "productId",
+    "productRevision",
+    "facts",
+    "inferred",
+    "unknowns",
+    "conflicts",
+    "references"
+  ],
+  "additionalProperties": false
+}

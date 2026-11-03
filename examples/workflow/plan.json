@@ -1,0 +1,354 @@
+{
+  "schemaVersion": "03A.1",
+  "productId": "test-cup",
+  "productRevision": 1,
+  "understandingDigest": "0f033c929c27f8261e406a1edb802d2bdee375be6f31d0228d814277b7e3f356",
+  "visual": {
+    "palette": [
+      "白色",
+      "浅灰"
+    ],
+    "font": "test-font",
+    "lighting": "柔和侧光",
+    "background": "简洁背景"
+  },
+  "images": [
+    {
+      "id": "white-1",
+      "type": "white",
+      "purpose": "正面整体",
+      "content": "white 测试内容 1；仅验证流程结构，不代表可用商品图",
+      "factIds": [],
+      "copy": [],
+      "layoutId": null,
+      "composition": {
+        "subjectBox": [
+          0.1,
+          0.1,
+          0.8,
+          0.8
+        ]
+      },
+      "references": [
+        {
+          "referenceId": "ref-front",
+          "role": "product"
+        },
+        {
+          "referenceId": "ref-detail",
+          "role": "detail"
+        },
+        {
+          "referenceId": "ref-style",
+          "role": "style"
+        }
+      ],
+      "dependencies": [],
+      "ratio": "1:1",
+      "size": {
+        "width": 64,
+        "height": 64
+      },
+      "method": "generate",
+      "textMode": "editable-overlay"
+    },
+    {
+      "id": "selling-1",
+      "type": "selling",
+      "purpose": "颜色信息",
+      "content": "selling 测试内容 1；仅验证流程结构，不代表可用商品图",
+      "factIds": [
+        "f-color"
+      ],
+      "copy": [
+        {
+          "slotId": "headline",
+          "text": "蓝色",
+          "factIds": [
+            "f-color"
+          ]
+        }
+      ],
+      "layoutId": "layout-one",
+      "composition": {
+        "subjectBox": [
+          0.1,
+          0.3,
+          0.8,
+          0.6
+        ]
+      },
+      "references": [
+        {
+          "referenceId": "ref-front",
+          "role": "product"
+        },
+        {
+          "referenceId": "ref-detail",
+          "role": "detail"
+        },
+        {
+          "referenceId": "ref-style",
+          "role": "style"
+        },
+        {
+          "referenceId": "ref-layout",
+          "role": "layout"
+        }
+      ],
+      "dependencies": [],
+      "ratio": "1:1",
+      "size": {
+        "width": 64,
+        "height": 64
+      },
+      "method": "generate",
+      "textMode": "editable-overlay"
+    },
+    {
+      "id": "selling-2",
+      "type": "selling",
+      "purpose": "容量信息",
+      "content": "selling 测试内容 2；仅验证流程结构，不代表可用商品图",
+      "factIds": [
+        "f-volume"
+      ],
+      "copy": [
+        {
+          "slotId": "headline",
+          "text": "350 mL",
+          "factIds": [
+            "f-volume"
+          ]
+        }
+      ],
+      "layoutId": null,
+      "composition": {
+        "subjectBox": [
+          0.1,
+          0.3,
+          0.8,
+          0.6
+        ]
+      },
+      "references": [
+        {
+          "referenceId": "ref-front",
+          "role": "product"
+        },
+        {
+          "referenceId": "ref-detail",
+          "role": "detail"
+        },
+        {
+          "referenceId": "ref-style",
+          "role": "style"
+        }
+      ],
+      "dependencies": [],
+      "ratio": "1:1",
+      "size": {
+        "width": 64,
+        "height": 64
+      },
+      "method": "generate",
+      "textMode": "editable-overlay"
+    },
+    {
+      "id": "selling-3",
+      "type": "selling",
+      "purpose": "外观细节",
+      "content": "selling 测试内容 3；仅验证流程结构，不代表可用商品图",
+      "factIds": [
+        "f-color"
+      ],
+      "copy": [
+        {
+          "slotId": "headline",
+          "text": "蓝色",
+          "factIds": [
+            "f-color"
+          ]
+        }
+      ],
+      "layoutId": null,
+      "composition": {
+        "subjectBox": [
+          0.1,
+          0.3,
+          0.8,
+          0.6
+        ]
+      },
+      "references": [
+        {
+          "referenceId": "ref-front",
+          "role": "product"
+        },
+        {
+          "referenceId": "ref-detail",
+          "role": "detail"
+        },
+        {
+          "referenceId": "ref-style",
+          "role": "style"
+        }
+      ],
+      "dependencies": [],
+      "ratio": "1:1",
+      "size": {
+        "width": 64,
+        "height": 64
+      },
+      "method": "generate",
+      "textMode": "editable-overlay"
+    },
+    {
+      "id": "scene-1",
+      "type": "scene",
+      "purpose": "桌面展示",
+      "content": "scene 测试内容 1；仅验证流程结构，不代表可用商品图",
+      "factIds": [
+        "f-color"
+      ],
+      "copy": [
+        {
+          "slotId": "headline",
+          "text": "蓝色",
+          "factIds": [
+            "f-color"
+          ]
+        }
+      ],
+      "layoutId": null,
+      "composition": {
+        "subjectBox": [
+          0.1,
+          0.3,
+          0.8,
+          0.6
+        ]
+      },
+      "references": [
+        {
+          "referenceId": "ref-front",
+          "role": "product"
+        },
+        {
+          "referenceId": "ref-detail",
+          "role": "detail"
+        },
+        {
+          "referenceId": "ref-style",
+          "role": "style"
+        }
+      ],
+      "dependencies": [],
+      "ratio": "1:1",
+      "size": {
+        "width": 64,
+        "height": 64
+      },
+      "method": "generate",
+      "textMode": "editable-overlay"
+    },
+    {
+      "id": "scene-2",
+      "type": "scene",
+      "purpose": "窗边展示",
+      "content": "scene 测试内容 2；仅验证流程结构，不代表可用商品图",
+      "factIds": [
+        "f-volume"
+      ],
+      "copy": [
+        {
+          "slotId": "headline",
+          "text": "350 mL",
+          "factIds": [
+            "f-volume"
+          ]
+        }
+      ],
+      "layoutId": null,
+      "composition": {
+        "subjectBox": [
+          0.1,
+          0.3,
+          0.8,
+          0.6
+        ]
+      },
+      "references": [
+        {
+          "referenceId": "ref-front",
+          "role": "product"
+        },
+        {
+          "referenceId": "ref-detail",
+          "role": "detail"
+        },
+        {
+          "referenceId": "ref-style",
+          "role": "style"
+        }
+      ],
+      "dependencies": [],
+      "ratio": "1:1",
+      "size": {
+        "width": 64,
+        "height": 64
+      },
+      "method": "generate",
+      "textMode": "editable-overlay"
+    },
+    {
+      "id": "other-1",
+      "type": "other",
+      "purpose": "杯口特写",
+      "content": "other 测试内容 1；仅验证流程结构，不代表可用商品图",
+      "factIds": [
+        "f-color"
+      ],
+      "copy": [
+        {
+          "slotId": "headline",
+          "text": "蓝色",
+          "factIds": [
+            "f-color"
+          ]
+        }
+      ],
+      "layoutId": null,
+      "composition": {
+        "subjectBox": [
+          0.1,
+          0.3,
+          0.8,
+          0.6
+        ]
+      },
+      "references": [
+        {
+          "referenceId": "ref-front",
+          "role": "product"
+        },
+        {
+          "referenceId": "ref-detail",
+          "role": "detail"
+        },
+        {
+          "referenceId": "ref-style",
+          "role": "style"
+        }
+      ],
+      "dependencies": [],
+      "ratio": "1:1",
+      "size": {
+        "width": 64,
+        "height": 64
+      },
+      "method": "generate",
+      "textMode": "editable-overlay"
+    }
+  ]
+}

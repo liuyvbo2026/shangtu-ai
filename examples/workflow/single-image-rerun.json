@@ -1,0 +1,178 @@
+{
+  "status": "succeeded",
+  "progress": {
+    "total": 7,
+    "succeeded": 7,
+    "failed": 0,
+    "blocked": 0,
+    "canceled": 0,
+    "pending": 0
+  },
+  "unchangedSiblingRecords": true,
+  "target": {
+    "imageId": "scene-1",
+    "planDigest": "963859c9b915da69a5d18d08cd84e08881c79befe41c29590c7cf41021fdaf19",
+    "status": "succeeded",
+    "lastAttemptStatus": "succeeded",
+    "attempts": [
+      {
+        "status": "failed",
+        "trace": [
+          {
+            "id": "assemble",
+            "version": "03A.nodes.1",
+            "inputDigest": "a3a4a9c23e09aa6930cda53ed0578f17f30988479cb76a18c338d64775deac21",
+            "outputDigest": "ed7a68a35a71b9126136ecc0fb6acf7b3b2e2043e6914d8313ca6e97c994f700",
+            "status": "succeeded",
+            "error": null
+          },
+          {
+            "id": "generate",
+            "version": "03A.nodes.1",
+            "inputDigest": "3f04edb06a46bab4b84d19959ef0664443ac953411f6ae544979c1e81d534f7d",
+            "outputDigest": null,
+            "status": "failed",
+            "error": {
+              "code": "REJECTED",
+              "retryable": false,
+              "outcomeUnknown": false,
+              "issues": []
+            }
+          }
+        ],
+        "error": {
+          "code": "REJECTED",
+          "retryable": false,
+          "outcomeUnknown": false,
+          "issues": []
+        }
+      },
+      {
+        "status": "succeeded",
+        "trace": [
+          {
+            "id": "assemble",
+            "version": "03A.nodes.1",
+            "inputDigest": "a3a4a9c23e09aa6930cda53ed0578f17f30988479cb76a18c338d64775deac21",
+            "outputDigest": "ed7a68a35a71b9126136ecc0fb6acf7b3b2e2043e6914d8313ca6e97c994f700",
+            "status": "succeeded",
+            "error": null
+          },
+          {
+            "id": "generate",
+            "version": "03A.nodes.1",
+            "inputDigest": "6a15383069106840bda464992c32c9eac4e0bc5315a7966a9d226973df30c1e4",
+            "outputDigest": "8428e0e56c672d766755cf3d963f61bf5227fdee0477fd1e5a3d6e7772f271d1",
+            "status": "succeeded",
+            "error": null
+          },
+          {
+            "id": "compose",
+            "version": "03A.nodes.1",
+            "inputDigest": "0cacaa38a651812558808090fa84749ca4c33a3d1e63ffc64918f968e446390a",
+            "outputDigest": "36b3cf442b68d07156ca9ef0a18728cfa371441e98d10f162b7edbdfb1779f80",
+            "status": "succeeded",
+            "error": null
+          },
+          {
+            "id": "inspect",
+            "version": "03A.nodes.1",
+            "inputDigest": "d4bcb0aee69a24b083a0aece38098af3d9c190d5200ec43a0f5ba7fb8f5cee68",
+            "outputDigest": "7df12921e66305f855a4f51f69938136989890cae7e95f22a16923037a3a1c62",
+            "status": "succeeded",
+            "error": null
+          }
+        ],
+        "error": null
+      }
+    ],
+    "versions": [
+      {
+        "raster": {
+          "base64": "iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAAAeUlEQVR4nO3PwQkAIBDAsNvaj/u5lkP4CEKhA6Sz1/m64YIGtKABLWhACxrQgga0oAEtaEALGtCCBrSgAS1oQAsa0IIGtKABLWhACxrQgga0oAEtaEALGtCCBrSgAS1oQAsa0IIGtKABLWhACxrQgga0oAEtaEALHruPCqGWBq4MvwAAAABJRU5ErkJggg==",
+          "mediaType": "image/png",
+          "width": 64,
+          "height": 64,
+          "provenance": "test-only",
+          "requestId": "test-scene-1-2"
+        },
+        "layers": [
+          {
+            "kind": "text",
+            "text": "蓝色",
+            "factIds": [
+              "f-color"
+            ],
+            "slotId": "headline",
+            "box": [
+              0.1,
+              0.05,
+              0.8,
+              0.2
+            ],
+            "language": "zh"
+          }
+        ],
+        "quality": {
+          "passed": true,
+          "evidence": "test-only",
+          "issues": []
+        },
+        "dependencyPins": [],
+        "artifact": {
+          "id": "artifact-1b09157037b21aa4380da89c68100ff722f7a6e51f3c7af055869d7b2f8ecff6",
+          "sha256": "1b09157037b21aa4380da89c68100ff722f7a6e51f3c7af055869d7b2f8ecff6",
+          "mediaType": "image/png",
+          "width": 64,
+          "height": 64,
+          "provenance": "test-only"
+        },
+        "version": 1
+      }
+    ],
+    "currentVersion": 1,
+    "checkpoint": {
+      "stage": "composed",
+      "planDigest": "963859c9b915da69a5d18d08cd84e08881c79befe41c29590c7cf41021fdaf19",
+      "imageId": "scene-1",
+      "pins": [],
+      "generated": {
+        "base64": "iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAAAeUlEQVR4nO3PwQkAIBDAsNvaj/u5lkP4CEKhA6Sz1/m64YIGtKABLWhACxrQgga0oAEtaEALGtCCBrSgAS1oQAsa0IIGtKABLWhACxrQgga0oAEtaEALGtCCBrSgAS1oQAsa0IIGtKABLWhACxrQgga0oAEtaEALHruPCqGWBq4MvwAAAABJRU5ErkJggg==",
+        "mediaType": "image/png",
+        "width": 64,
+        "height": 64,
+        "provenance": "test-only",
+        "requestId": "test-scene-1-2"
+      },
+      "composed": {
+        "raster": {
+          "base64": "iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAAAeUlEQVR4nO3PwQkAIBDAsNvaj/u5lkP4CEKhA6Sz1/m64YIGtKABLWhACxrQgga0oAEtaEALGtCCBrSgAS1oQAsa0IIGtKABLWhACxrQgga0oAEtaEALGtCCBrSgAS1oQAsa0IIGtKABLWhACxrQgga0oAEtaEALHruPCqGWBq4MvwAAAABJRU5ErkJggg==",
+          "mediaType": "image/png",
+          "width": 64,
+          "height": 64,
+          "provenance": "test-only",
+          "requestId": "test-scene-1-2"
+        },
+        "layers": [
+          {
+            "kind": "text",
+            "text": "蓝色",
+            "factIds": [
+              "f-color"
+            ],
+            "slotId": "headline",
+            "box": [
+              0.1,
+              0.05,
+              0.8,
+              0.2
+            ],
+            "language": "zh"
+          }
+        ]
+      },
+      "digest": "9fea3a138d425fd6cde4f2fd31094b54098c64fce77db4355665a4409ea9ffaf"
+    },
+    "error": null
+  }
+}

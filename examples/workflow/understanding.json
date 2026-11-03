@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "03A.1",
+  "productId": "test-cup",
+  "productRevision": 1,
+  "facts": [
+    {
+      "id": "f-color",
+      "key": "color",
+      "value": "蓝色",
+      "source": {
+        "kind": "user-confirmed",
+        "locator": "test-fixture:color"
+      }
+    },
+    {
+      "id": "f-volume",
+      "key": "volume",
+      "value": "350 mL",
+      "source": {
+        "kind": "user-confirmed",
+        "locator": "test-fixture:volume"
+      }
+    }
+  ],
+  "unknowns": [
+    {
+      "key": "material",
+      "reason": "未提供材质证明"
+    }
+  ],
+  "references": [
+    {
+      "id": "ref-front",
+      "assetId": "asset-front",
+      "role": "product",
+      "purpose": "确认商品正面外观"
+    },
+    {
+      "id": "ref-detail",
+      "assetId": "asset-detail",
+      "role": "detail",
+      "purpose": "杯口细节"
+    },
+    {
+      "id": "ref-style",
+      "assetId": "asset-style",
+      "role": "style",
+      "purpose": "仅参考光线和背景"
+    },
+    {
+      "id": "ref-layout",
+      "assetId": "asset-layout",
+      "role": "layout",
+      "purpose": "仅参考文字与主体位置"
+    }
+  ],
+  "inferred": [
+    {
+      "id": "inferred-shape",
+      "key": "shape",
+      "value": "杯状轮廓（测试推断）",
+      "confidence": 0.75,
+      "evidenceReferenceIds": [
+        "ref-front"
+      ]
+    }
+  ],
+  "conflicts": []
+}

@@ -1,0 +1,283 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "03A plan",
+  "type": "object",
+  "properties": {
+    "schemaVersion": {
+      "const": "03A.1"
+    },
+    "productId": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100,
+      "pattern": "^[a-zA-Z0-9_.:-]+$"
+    },
+    "productRevision": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "understandingDigest": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 12000
+    },
+    "visual": {
+      "type": "object",
+      "properties": {
+        "palette": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 12000
+          },
+          "minItems": 1
+        },
+        "font": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 12000
+        },
+        "lighting": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 12000
+        },
+        "background": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 12000
+        }
+      },
+      "required": [
+        "palette",
+        "font",
+        "lighting",
+        "background"
+      ],
+      "additionalProperties": false
+    },
+    "images": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100,
+            "pattern": "^[a-zA-Z0-9_.:-]+$"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "white",
+              "selling",
+              "scene",
+              "other"
+            ]
+          },
+          "purpose": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 12000
+          },
+          "content": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 12000
+          },
+          "factIds": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100,
+              "pattern": "^[a-zA-Z0-9_.:-]+$"
+            },
+            "minItems": 0
+          },
+          "copy": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "text": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 12000
+                },
+                "factIds": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 100,
+                    "pattern": "^[a-zA-Z0-9_.:-]+$"
+                  },
+                  "minItems": 1
+                },
+                "slotId": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 100,
+                  "pattern": "^[a-zA-Z0-9_.:-]+$"
+                }
+              },
+              "required": [
+                "text",
+                "factIds",
+                "slotId"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 0
+          },
+          "layoutId": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 100,
+                "pattern": "^[a-zA-Z0-9_.:-]+$"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "composition": {
+            "type": "object",
+            "properties": {
+              "subjectBox": {
+                "type": "array",
+                "items": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "minItems": 4,
+                "maxItems": 4
+              }
+            },
+            "required": [
+              "subjectBox"
+            ],
+            "additionalProperties": false
+          },
+          "references": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "referenceId": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 100,
+                  "pattern": "^[a-zA-Z0-9_.:-]+$"
+                },
+                "role": {
+                  "type": "string",
+                  "enum": [
+                    "product",
+                    "detail",
+                    "packaging",
+                    "style",
+                    "layout",
+                    "current",
+                    "baseline"
+                  ]
+                }
+              },
+              "required": [
+                "referenceId",
+                "role"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 1
+          },
+          "dependencies": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "imageId": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 100,
+                  "pattern": "^[a-zA-Z0-9_.:-]+$"
+                },
+                "use": {
+                  "const": "baseline"
+                }
+              },
+              "required": [
+                "imageId",
+                "use"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 0
+          },
+          "ratio": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 12000
+          },
+          "size": {
+            "type": "object",
+            "properties": {
+              "width": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "height": {
+                "type": "integer",
+                "minimum": 1
+              }
+            },
+            "required": [
+              "width",
+              "height"
+            ],
+            "additionalProperties": false
+          },
+          "method": {
+            "const": "generate"
+          },
+          "textMode": {
+            "const": "editable-overlay"
+          }
+        },
+        "required": [
+          "id",
+          "type",
+          "purpose",
+          "content",
+          "factIds",
+          "copy",
+          "layoutId",
+          "composition",
+          "references",
+          "dependencies",
+          "ratio",
+          "size",
+          "method",
+          "textMode"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "productId",
+    "productRevision",
+    "understandingDigest",
+    "visual",
+    "images"
+  ],
+  "additionalProperties": false
+}

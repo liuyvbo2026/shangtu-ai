@@ -1,0 +1,114 @@
+{
+  "schemaVersion": "03A.1",
+  "product": {
+    "id": "test-cup",
+    "revision": 1,
+    "name": "测试杯（合成资料）",
+    "facts": [
+      {
+        "id": "f-color",
+        "key": "color",
+        "value": "蓝色",
+        "source": {
+          "kind": "user-confirmed",
+          "locator": "test-fixture:color"
+        }
+      },
+      {
+        "id": "f-volume",
+        "key": "volume",
+        "value": "350 mL",
+        "source": {
+          "kind": "user-confirmed",
+          "locator": "test-fixture:volume"
+        }
+      }
+    ],
+    "unknowns": [
+      {
+        "key": "material",
+        "reason": "未提供材质证明"
+      }
+    ],
+    "references": [
+      {
+        "id": "ref-front",
+        "assetId": "asset-front",
+        "role": "product",
+        "purpose": "确认商品正面外观"
+      },
+      {
+        "id": "ref-detail",
+        "assetId": "asset-detail",
+        "role": "detail",
+        "purpose": "杯口细节"
+      },
+      {
+        "id": "ref-style",
+        "assetId": "asset-style",
+        "role": "style",
+        "purpose": "仅参考光线和背景"
+      },
+      {
+        "id": "ref-layout",
+        "assetId": "asset-layout",
+        "role": "layout",
+        "purpose": "仅参考文字与主体位置"
+      }
+    ]
+  },
+  "requirements": {
+    "description": "独立测试套图，未知材质不得写入文案",
+    "platform": "test",
+    "language": "zh",
+    "counts": {
+      "white": 1,
+      "selling": 3,
+      "scene": 2,
+      "other": 1
+    },
+    "ratio": "1:1",
+    "size": {
+      "width": 64,
+      "height": 64
+    },
+    "layoutIds": [
+      "layout-one"
+    ]
+  },
+  "layouts": [
+    {
+      "id": "layout-one",
+      "version": "test.1",
+      "allowedTypes": [
+        "selling"
+      ],
+      "ratios": [
+        "1:1",
+        "3:4",
+        "9:16",
+        "16:9"
+      ],
+      "referenceId": "ref-layout",
+      "subjectBox": [
+        0.1,
+        0.3,
+        0.8,
+        0.6
+      ],
+      "textSlots": [
+        {
+          "id": "headline",
+          "box": [
+            0.1,
+            0.05,
+            0.8,
+            0.2
+          ],
+          "maxChars": 32,
+          "maxLines": 2
+        }
+      ]
+    }
+  ]
+}
