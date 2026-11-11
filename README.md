@@ -12,6 +12,8 @@
 
 ![商图AI 商品套图工作台](docs/screenshots/workbench.jpg)
 
+![商图AI 卖点图版式选择](docs/screenshots/layouts.jpg)
+
 ![商图AI 多商品批量任务设置](docs/screenshots/batch.jpg)
 
 ## 本地运行
