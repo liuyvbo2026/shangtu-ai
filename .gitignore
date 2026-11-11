@@ -15,9 +15,3 @@ cache/
 artifacts/
 evaluation/
 *.log
-
-__pycache__/
-*.pyc
-AGENTS.md
-docs/STATUS.md
-docs/DEEPSEEK-HANDOFF.md

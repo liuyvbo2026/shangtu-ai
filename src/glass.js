@@ -1,40 +1,35 @@
-// The approved low-chroma glass is decoration only; user assets are never filtered.
-// Refraction is already in the artwork, so do not add a second bright ridge pass.
-export function initGlass(canvas) {
- const surface=canvas.parentElement,artwork=surface.querySelector('.glass-art');
+// A pre-rendered optical animation. Runtime only manages playback;
+// the light/refraction animation is contained in the video itself.
+export function initGlass(video) {
+ const surface=video.parentElement;
  const reduced=matchMedia('(prefers-reduced-motion: reduce)');
- const finePointer=matchMedia('(hover: hover) and (pointer: fine)');
- let scene='empty',frame=0,last=0,mouse=[0,0],target=[0,0];
- canvas.hidden=true;
- surface.dataset.renderer='artwork';
- function draw(now){
-  frame=0;
-  const dt=Math.min(40,now-last||16);last=now;
-  const blend=reduced.matches?1:1-Math.exp(-dt/180);
-  mouse=mouse.map((v,i)=>v+(target[i]-v)*blend);
-  artwork.style.setProperty('--glass-x',`${mouse[0].toFixed(3)}px`);
-  artwork.style.setProperty('--glass-y',`${mouse[1].toFixed(3)}px`);
-  if(mouse.some((v,i)=>Math.abs(v-target[i])>.01))schedule();
+ let scene=surface.dataset.scene||'empty',request=0;
+ video.muted=true;video.defaultMuted=true;video.loop=true;video.playsInline=true;
+ const active=()=>scene==='empty'&&!document.hidden&&!reduced.matches;
+ function poster(reason){surface.dataset.renderer='artwork';surface.dataset.motion=reason;}
+ async function refresh(){
+  const attempt=++request;
+  if(!active()){
+   video.pause();
+   poster(reduced.matches?'reduced-motion':'paused');
+   return;
+  }
+  try{
+   await video.play();
+   if(attempt!==request)return;
+   if(active()){surface.dataset.renderer='video';surface.dataset.motion='playing';}
+  }catch{
+   if(attempt===request)poster(video.error?'error':'autoplay-blocked');
+  }
  }
- function schedule(){if(!frame&&!document.hidden)frame=requestAnimationFrame(draw);}
- function reset(){target=[0,0];schedule();}
- window.addEventListener('pointermove',event=>{
-  if(reduced.matches||!finePointer.matches||event.pointerType==='touch'||scene!=='empty')return;
-  const box=surface.getBoundingClientRect();
-  if(event.clientX<box.left||event.clientX>box.right||event.clientY<box.top||event.clientY>box.bottom){reset();return;}
-  target=[((event.clientX-box.left)/Math.max(1,box.width)*2-1)*1.5,((event.clientY-box.top)/Math.max(1,box.height)*2-1)];
-  schedule();
- },{passive:true});
- document.documentElement.addEventListener('pointerleave',reset);
- document.addEventListener('visibilitychange',()=>{
-  if(document.hidden&&frame){cancelAnimationFrame(frame);frame=0;}else if(!document.hidden){last=0;reset();}
+ video.addEventListener('playing',()=>{
+  if(active()){surface.dataset.renderer='video';surface.dataset.motion='playing';}
+  else video.pause();
  });
- reduced.addEventListener('change',reset);
- finePointer.addEventListener('change',reset);
- artwork.decode().then(()=>{surface.dataset.artwork='ready';}).catch(()=>{surface.dataset.artwork='unavailable';});
- return {setScene(name){
-  if(scene===name)return;
-  scene=name;surface.dataset.scene=name;
-  if(name!=='empty')reset();
- }};
+ video.addEventListener('error',()=>poster('error'));
+ document.addEventListener('visibilitychange',refresh);
+ reduced.addEventListener('change',refresh);
+ document.addEventListener('pointerdown',()=>{if(active()&&video.paused)refresh();},{passive:true});
+ poster('loading');refresh();
+ return {setScene(name){if(scene===name)return;scene=name;surface.dataset.scene=name;refresh();}};
 }

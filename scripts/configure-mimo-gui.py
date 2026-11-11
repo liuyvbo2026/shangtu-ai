@@ -12,7 +12,7 @@ set candidate to ""
 set hint to "请先复制 MiMo 普通 API 密钥，再点击「从剪贴板粘贴」。输入框以圆点显示，点击「保存」才会写入本机配置。"
 repeat
     try
-        set response to display dialog hint with title "刘禹博的 AIGC · MiMo 密钥配置" default answer candidate buttons {"取消", "从剪贴板粘贴", "保存"} default button "保存" cancel button "取消" with hidden answer
+        set response to display dialog hint with title "商图AI · MiMo 密钥配置" default answer candidate buttons {"取消", "从剪贴板粘贴", "保存"} default button "保存" cancel button "取消" with hidden answer
     on error number -128
         return ""
     end try
@@ -49,7 +49,7 @@ def dialog(script):
 def notice(message):
     # Only constant application messages are allowed here, never a key or exception.
     dialog('activate\ndisplay dialog "' + message +
-           '" with title "刘禹博的 AIGC · MiMo 密钥配置" buttons {"好的"} default button "好的"')
+           '" with title "商图AI · MiMo 密钥配置" buttons {"好的"} default button "好的"')
 
 
 def main():

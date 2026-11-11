@@ -1,0 +1,258 @@
+/* Shallow workbench, 2026-11-07. One light field, quiet glass, thin surfaces.
+   Keep layout, original media, motion and control semantics intact. */
+body[data-scene=empty]{
+ background:#f7f3fb;
+}
+.kit-empty>div{width:max-content;max-width:100%}
+.kit-empty :is(h1,p){text-align:justify;text-align-last:justify;text-justify:inter-character}
+.kit-empty p{display:block;margin-top:24px}
+.glass-background[data-scene=empty]{
+ inset:0;
+ background:radial-gradient(ellipse at 12% 83%,#fdf2ef 0%,transparent 55%),
+  radial-gradient(ellipse at 68% 56%,#eeE8f8 0%,transparent 65%),
+  linear-gradient(105deg,#fcf9f8 4%,#f7f3fb 78%,#f7f3fb);
+}
+/* Keep the moving light across the entire page. Only soften the glass relief
+   toward the controls, so the workbench still receives the same changing light. */
+.glass-background[data-scene=empty] :is(.glass-art,.glass-video){
+ filter:saturate(.72) blur(.25px);
+ -webkit-mask-image:none;mask-image:none;
+}
+.glass-background[data-scene=empty] .glass-art,
+.glass-background[data-renderer=video][data-scene=empty] .glass-video{opacity:.68}
+.glass-background[data-scene=empty]::after{
+ content:"";position:absolute;inset:0;pointer-events:none;
+ background:#f7f3fb70;
+ -webkit-backdrop-filter:blur(24px);backdrop-filter:blur(24px);
+ -webkit-mask-image:linear-gradient(90deg,transparent calc(100% - var(--panel-width) - 260px),#000b calc(100% - var(--panel-width) - 70px),#000 calc(100% - var(--panel-width) + 100px));
+ mask-image:linear-gradient(90deg,transparent calc(100% - var(--panel-width) - 260px),#000b calc(100% - var(--panel-width) - 70px),#000 calc(100% - var(--panel-width) + 100px));
+}
+.app-shell>.inspector{
+ --workbench-surface:linear-gradient(155deg,#ffffff65,#ffffff40);
+ --workbench-shadow:0 1px 2px #30223e03,0 3px 10px -6px #30223e0c;
+ --workbench-control-shadow:0 1px 3px #392a4905;
+ --workbench-ease:cubic-bezier(.2,.75,.25,1);
+ background:#f7f3fb;
+ border-left:1px solid transparent;
+ box-shadow:none;
+}
+body[data-scene=empty] .app-shell>.inspector{background:transparent}
+.app-shell>.inspector .inspector-heading{
+ background:transparent;
+ -webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);
+ gap:12px;
+}
+.app-shell>.inspector .inspector-heading>div{gap:10px}
+.app-shell>.inspector .inspector-heading::after{
+ left:32px;right:32px;height:1px;clip-path:none;border-radius:0;
+ background:transparent;
+}
+.app-shell>.inspector .inspector-heading::before{
+ height:20px;
+ background:linear-gradient(#4834560b,transparent);
+}
+.app-shell>.inspector .inspector-scroll{scrollbar-color:#cfc8d8 transparent}
+.kit-config{--space-section:24px;--space-heading:18px}
+.kit-config .inspector-section{padding:24px 0}
+.kit-config .section-label{margin-bottom:18px;gap:12px}
+.kit-config .section-label h3{font-weight:500}
+.kit-config .section-number{color:#9990a5}
+.kit-config .inspector-section::after{
+ left:0;right:0;height:1px;clip-path:none;border-radius:0;
+ background:transparent;
+}
+
+/* Helpers stay almost flush; focus and hover provide the interaction cues. */
+.app-shell>.inspector :is(.inspector-heading .text-button,[data-a=assist-kit],.source-add){
+ min-height:34px;padding:7px 11px;border:1px solid #e9e2f14d;border-radius:11px;
+ background:#ffffff30;
+ box-shadow:var(--workbench-control-shadow);color:#74619f;
+ text-decoration:none;
+ transition:background .2s ease,box-shadow .24s var(--workbench-ease),transform .24s var(--workbench-ease),border-color .2s ease;
+}
+.app-shell>.inspector .inspector-heading .text-button{font-size:12px}
+.app-shell>.inspector .inspector-heading h2{letter-spacing:0}
+.kit-config .section-label [data-a=assist-kit]{font-size:12px;padding-inline:12px}
+
+/* Empty input and existing product references retain the same actions and IDs. */
+.kit-config .kit-upload .upload-target,
+.kit-config .kit-source-surface{
+ border:1px solid #ffffff45;border-radius:17px;
+ background:var(--workbench-surface);box-shadow:var(--workbench-shadow);
+}
+.kit-config .kit-upload .upload-target{
+ min-height:128px;aspect-ratio:auto;gap:13px;font-size:14px;
+ transition:box-shadow .24s var(--workbench-ease),border-color .2s,background .2s;
+}
+.kit-config .kit-source-surface{padding:12px}
+.kit-config .kit-source-surface.is-single{
+ display:grid;grid-template-columns:92px minmax(0,1fr) 40px;gap:16px;align-items:center;
+}
+.kit-config .kit-source-surface .reference{
+ border:1px solid #eeebf1;border-radius:11px;background:#faf9fb;
+}
+.kit-config .kit-source-surface .reference img{display:block;background:#faf9fb}
+.kit-config .kit-source-surface .reference>span{border-radius:4px;color:#81788b;left:5px;bottom:5px}
+.kit-config .kit-source-surface .reference>button{
+ width:23px;min-height:23px;top:5px;right:5px;border-radius:7px;
+ box-shadow:0 1px 5px #30223e14;
+}
+.kit-config .kit-source-surface .source-add{width:40px;height:40px;min-height:40px;padding:0;border-radius:11px}
+.kit-source-summary{min-width:0}
+.kit-source-summary p{font-size:14px;font-weight:500;line-height:1.6;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.kit-source-summary>span{display:block;margin-top:7px;font-size:12px;color:#92899b}
+.kit-source-caption{display:flex;justify-content:space-between;gap:12px;margin:12px 2px 1px;color:var(--muted);font-size:12px}
+.kit-source-caption>span:first-child{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.kit-source-caption>span:last-child{flex:none}
+.kit-config .kit-source-surface .reference.add{border:1px solid #e7e1ee80;background:#ffffff40;box-shadow:none}
+.kit-config .source-toolbar{margin-top:13px;gap:8px}
+.kit-config .source-toolbar>div{font-size:11px;line-height:1.75}
+
+/* One white group, five single-column rows. No separate boxes around values. */
+.inspector.kit-config .settings-grid{
+ display:block;padding:6px 16px;border:1px solid #ffffff45;border-radius:17px;
+ background:var(--workbench-surface);box-shadow:var(--workbench-shadow);
+}
+.inspector.kit-config .settings-grid .field{
+ display:grid;grid-template-columns:84px minmax(0,1fr);gap:12px;
+ min-height:41px;height:auto;margin:0;padding:0;border-bottom:1px solid #e8e2ed70;
+}
+.inspector.kit-config .settings-grid .field:last-child{border-bottom:0}
+.inspector.kit-config .settings-grid .field>span:first-child{font-size:14px;color:#68616f}
+.inspector.kit-config .settings-grid .select-trigger{
+ height:40px;min-height:40px;padding:8px 2px 8px 7px;
+ border:0;border-radius:6px;color:#3d3746;background:transparent;font-size:14px;
+ transition:background .18s ease,color .18s ease;
+}
+.inspector.kit-config .settings-grid .field:last-child .select-trigger{border:0}
+.inspector.kit-config .settings-grid .select-trigger[aria-expanded=true]{border:0;background:#eeE8f56b;color:#625184}
+.inspector.kit-config .settings-grid .select-trigger svg{width:11px;color:#998eaa}
+.inspector.kit-config .settings-grid .select-trigger:hover:not(:disabled){border:0;background:#f0ebf678}
+
+.kit-config textarea{
+ background:#ffffff45;
+ border:1px solid #e5dfee70;border-radius:14px;
+ box-shadow:0 1px 2px #30223e03;
+ color:#423b49;padding:14px 16px;
+ transition:border-color .2s,box-shadow .2s;
+}
+.kit-config textarea:focus-visible{outline:1px solid #ad9bc9;outline-offset:0;border-color:#ad9bc9;box-shadow:0 0 0 3px #8870b417}
+.kit-config textarea[aria-invalid=true]{border-color:var(--error)}
+.kit-config .inspector-section>label.field{margin-bottom:14px;gap:4px}
+.kit-config [data-input-feedback]:empty{display:none}
+.kit-config .inspector-section>.row{gap:12px;row-gap:4px}
+.kit-config .inspector-section>.row .text-button{font-size:11px}
+.kit-config .counts{
+ padding:4px 16px 8px;border:1px solid #ffffff45;border-radius:17px;
+ background:var(--workbench-surface);box-shadow:var(--workbench-shadow);
+}
+.kit-config .count-row{border-bottom-color:#e8e2ed70;min-height:46px}
+.kit-config .structure-item:last-child .count-row{border-bottom:0}
+.kit-config .stepper button{border-radius:8px}
+.kit-config .structure-item>.wide{background:#f9f7fc;border-color:#e9e2f1;border-radius:10px}
+.kit-config .counts+.toggle{margin-top:20px}
+
+/* Fixed action layer: blur is limited to chrome, never applied to product images. */
+.app-shell>.inspector .inspector-bottom{
+ position:relative;z-index:3;border-top:1px solid transparent;
+ background:transparent;
+ -webkit-backdrop-filter:none;backdrop-filter:none;
+ box-shadow:none;
+}
+.app-shell>.inspector .inspector-bottom::before{
+ content:"";position:absolute;inset:-24px 0 0;z-index:-1;pointer-events:none;
+ background:#f7f3fb99;
+ -webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);
+ -webkit-mask-image:linear-gradient(transparent,#000 24px);
+ mask-image:linear-gradient(transparent,#000 24px);
+}
+.app-shell>.inspector .inspector-bottom .primary{
+ height:46px;min-height:46px;border:1px solid #a28cc5;border-radius:12px;
+ background:linear-gradient(180deg,#ad97cf,#a38bc7);color:#fff;
+ box-shadow:0 1px 3px #6f559e0d;
+ font-weight:500;letter-spacing:.01em;
+ transition:background .2s,box-shadow .24s var(--workbench-ease),transform .24s var(--workbench-ease);
+}
+.app-shell>.inspector .inspector-bottom .primary:disabled{
+ background:#e8e0f0;border-color:transparent;color:#9c90ab;
+ box-shadow:none;
+}
+
+/* Existing select behavior, focus semantics and scroll dismissal are unchanged. */
+body:has(.inspector .select-trigger[aria-expanded=true])>.select-menu{
+ background:#fefcffed;border:1px solid #ffffffdb;border-radius:14px;padding:6px;
+ box-shadow:0 2px 5px #33244006,0 10px 28px -8px #3324401f;
+ -webkit-backdrop-filter:blur(22px);backdrop-filter:blur(22px);
+ animation:workbench-menu-in .18s cubic-bezier(.2,.75,.25,1);
+}
+body:has(.inspector .select-trigger[aria-expanded=true])>.select-menu .select-option{border-radius:8px;min-height:37px}
+@keyframes workbench-menu-in{from{opacity:0;transform:translateY(3px)}to{opacity:1;transform:translateY(0)}}
+
+@media(hover:hover) and (pointer:fine){
+ .app-shell>.inspector :is(.inspector-heading .text-button,[data-a=assist-kit],.source-add):hover:not(:disabled){
+  background:#ffffff70;border-color:#e9e2f180;transform:none;text-decoration:none;
+  box-shadow:0 1px 4px #392a4909;
+ }
+ .kit-config .kit-upload .upload-target:hover:not(:disabled){background:#ffffff80;border-color:#e2d8ef80;box-shadow:var(--workbench-shadow)}
+ .app-shell>.inspector .inspector-bottom .primary:hover:not(:disabled){
+  background:linear-gradient(#a28ac7,#9980bf);transform:none;
+  box-shadow:0 2px 6px #6f559e14;
+ }
+}
+.app-shell>.inspector :is(.inspector-heading .text-button,[data-a=assist-kit],.source-add,.inspector-bottom .primary):active:not(:disabled){
+ transform:scale(.99);box-shadow:inset 0 1px 2px #44334e08;
+}
+@media(max-width:1390px){.app-shell>.inspector .inspector-heading::after{left:26px;right:26px}}
+@media(max-width:1100px){
+ .app-shell>.inspector .inspector-heading>div{gap:7px}
+ .app-shell>.inspector .inspector-heading .text-button{padding:6px 9px;font-size:11px}
+ .app-shell>.inspector .inspector-heading::after{left:24px;right:24px}
+ .kit-config .kit-source-surface.is-single{grid-template-columns:80px minmax(0,1fr) 36px;gap:12px}
+ .kit-config .kit-source-surface .source-add{width:36px;height:38px;min-height:38px}
+}
+@media(max-width:800px){
+ .is-empty .kit-empty p{margin-top:16px}
+ .app-shell>.inspector{box-shadow:none;border-left:0;border-top:0}
+ body[data-scene=empty] .glass-background{height:calc(var(--hero-height) + 140px)}
+ .glass-background[data-scene=empty] :is(.glass-art,.glass-video){
+  -webkit-mask-image:linear-gradient(#000e 0%,#000e 45%,transparent 100%);
+  mask-image:linear-gradient(#000e 0%,#000e 45%,transparent 100%);
+ }
+ .glass-background[data-scene=empty]::after{
+  background:none;
+  -webkit-mask-image:linear-gradient(transparent 35%,#000 85%);
+  mask-image:linear-gradient(transparent 35%,#000 85%);
+ }
+ body[data-scene=empty] .glass-background{
+  background:radial-gradient(ellipse at 12% 18%,#fdf2ef 0%,transparent 65%),linear-gradient(#f5f0f9,#f7f3fb);
+ }
+ .app-shell>.inspector .inspector-heading{
+  background:rgb(247 243 251 / calc(var(--header-shadow,0) * .93));
+  -webkit-backdrop-filter:blur(calc(var(--header-shadow,0) * 16px));
+  backdrop-filter:blur(calc(var(--header-shadow,0) * 16px));
+ }
+ .inspector.kit-config .settings-grid{display:block}
+ .kit-config .inspector-section{padding-block:24px}
+}
+@media(max-width:520px){
+ .app-shell>.inspector .inspector-heading{gap:8px}
+ .app-shell>.inspector .inspector-heading h2{font-size:24px}
+ .app-shell>.inspector .inspector-heading>div{gap:6px}
+ .app-shell>.inspector .inspector-heading .text-button{font-size:11px;padding:6px 8px}
+ .inspector.kit-config .settings-grid{padding-inline:14px}
+ .inspector.kit-config .settings-grid .field{grid-template-columns:78px minmax(0,1fr)}
+ .kit-config .kit-source-surface.is-single{gap:12px}
+ .kit-config .source-toolbar .text-button{font-size:11px}
+ .kit-config .section-label{gap:10px}
+ .kit-config .section-label h3{font-size:16px}
+ .kit-config .section-label [data-a=assist-kit]{font-size:11px;padding-inline:9px}
+}
+@media(prefers-reduced-motion:reduce){
+ .app-shell>.inspector *{transition:none!important;animation:none!important}
+ .app-shell>.inspector button:where(:hover,:active){transform:none!important}
+ body:has(.inspector .select-trigger[aria-expanded=true])>.select-menu{animation:none!important}
+}
+@media(forced-colors:active){
+ .app-shell>.inspector :is(.settings-grid,.kit-source-surface,.counts,.upload-target){border:1px solid CanvasText}
+ .app-shell>.inspector button{border:1px solid ButtonText}
+}

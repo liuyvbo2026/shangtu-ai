@@ -66,8 +66,9 @@ summary::-webkit-details-marker{display:none}
 details>p{white-space:pre-line;line-height:1.8;font-size:var(--font-small)}
 
 .glass-background{position:fixed;inset:0 var(--panel-width) 0 0;pointer-events:none;z-index:0;background:radial-gradient(ellipse at 90% 80%,#e4ddec,transparent 65%),radial-gradient(ellipse at 32% 80%,#fbe8e0,transparent 60%),#fffefd;overflow:hidden}
-.glass-background canvas{display:block;width:100%;height:100%;position:absolute;inset:0}
-.glass-background canvas[hidden]{display:none}
+.glass-background video{display:block;width:100%;height:100%;position:absolute;inset:0;object-fit:cover;object-position:center;opacity:0;pointer-events:none}
+.glass-background[data-renderer=video][data-scene=empty] video{opacity:1}
+
 .glass-background[data-scene=results]{background:#fffefd}
 .glass-background[data-scene=preview]{background:#fafafa}
 .app-shell{height:100dvh;display:grid;grid-template-columns:minmax(0,1fr) var(--panel-width);grid-template-rows:var(--header-height) minmax(0,1fr) var(--footer-height);position:relative;isolation:isolate}
@@ -586,13 +587,12 @@ to{opacity:1;transform:none}
 .toggle input[role=switch]:checked{background:var(--primary);border-color:var(--primary)}
 .select-option>svg{width:15px;height:15px}
 
-/* Approved soft refraction is baked into decoration, never into product images. */
-.glass-art{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;
- opacity:1;transform:translate(var(--glass-x,0px),var(--glass-y,0px)) scale(1.008);transition:opacity .4s ease}
+/* The original is the poster; the loop contains the animated refracted light. */
+.glass-art{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:1;transition:opacity .4s ease}
+.glass-background[data-renderer=video][data-scene=empty] .glass-art{display:none}
 .glass-background[data-scene=results] .glass-art{opacity:.08}
 .glass-background[data-scene=preview] .glass-art{opacity:0}
 .glass-background[data-artwork=unavailable] .glass-art{display:none}
-@media(prefers-reduced-motion:reduce){.glass-art{transform:none}}
 
 @media(max-width:1390px){
  .inspector-heading,.inspector-scroll{padding-inline:26px}
@@ -614,6 +614,9 @@ to{opacity:1;transform:none}
 @media(max-width:800px){
  :root{--panel-width:0px;--header-height:76px;--hero-height:clamp(260px,72vw,320px)}
  .app-header{min-height:var(--header-height);background:#ffffffed;border-bottom-color:var(--line);backdrop-filter:blur(16px)}
+ .brand{font-size:16px}
+ .brand span{font-size:11px}
+ .app-header nav button{font-size:13px}
  .glass-background{position:fixed;inset:0}
  body[data-scene=empty] .glass-background{position:absolute;top:var(--header-height);bottom:auto;height:var(--hero-height)}
  .is-empty .work-scroll{order:0;min-height:var(--hero-height)}
